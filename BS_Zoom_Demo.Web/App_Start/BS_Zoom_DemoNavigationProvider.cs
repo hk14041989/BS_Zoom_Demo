@@ -64,6 +64,14 @@ namespace BS_Zoom_Demo.Web
                         icon: "people",
                         permissionDependency: new SimplePermissionDependency(PermissionNames.Pages_Meetings)
                     )
+                ).AddItem(
+                    new MenuItemDefinition(
+                        PageNames.MeetingsList,
+                        L("MeetingsList"),
+                        url: "MeetingManager",
+                        icon: "people",
+                        permissionDependency: new SimplePermissionDependency(PermissionNames.Pages_MeetingsList)
+                    )
                 ).AddItem( //Menu items below is just for demonstration!
                     new MenuItemDefinition(
                         "MultiLevelMenu",

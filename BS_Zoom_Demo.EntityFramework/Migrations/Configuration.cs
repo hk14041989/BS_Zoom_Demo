@@ -6,7 +6,7 @@ using EntityFramework.DynamicFilters;
 
 namespace BS_Zoom_Demo.Migrations
 {
-    public sealed class Configuration : DbMigrationsConfiguration<BS_Zoom_Demo.EntityFramework.BS_Zoom_DemoDbContext>, IMultiTenantSeed
+    public sealed class Configuration : DbMigrationsConfiguration<EntityFramework.BS_Zoom_DemoDbContext>, IMultiTenantSeed
     {
         public AbpTenantBase Tenant { get; set; }
 
@@ -16,7 +16,7 @@ namespace BS_Zoom_Demo.Migrations
             ContextKey = "BS_Zoom_Demo";
         }
 
-        protected override void Seed(BS_Zoom_Demo.EntityFramework.BS_Zoom_DemoDbContext context)
+        protected override void Seed(EntityFramework.BS_Zoom_DemoDbContext context)
         {
             context.DisableAllFilters();
 

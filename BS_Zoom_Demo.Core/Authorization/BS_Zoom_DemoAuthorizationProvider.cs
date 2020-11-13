@@ -12,6 +12,7 @@ namespace BS_Zoom_Demo.Authorization
             context.CreatePermission(PermissionNames.Pages_Roles, L("Roles"));
             context.CreatePermission(PermissionNames.Pages_Tenants, L("Tenants"), multiTenancySides: MultiTenancySides.Host);
             context.CreatePermission(PermissionNames.Pages_Meetings, L("Meetings"));
+            context.CreatePermission(PermissionNames.Pages_MeetingsList, L("MeetingsList"));
         }
 
         private static ILocalizableString L(string name)

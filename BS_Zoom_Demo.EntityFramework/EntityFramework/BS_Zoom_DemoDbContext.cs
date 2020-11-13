@@ -4,13 +4,18 @@ using Abp.DynamicEntityProperties;
 using Abp.Zero.EntityFramework;
 using BS_Zoom_Demo.Authorization.Roles;
 using BS_Zoom_Demo.Authorization.Users;
+using BS_Zoom_Demo.Meetings;
 using BS_Zoom_Demo.MultiTenancy;
+using BS_Zoom_Demo.Teachers;
 
 namespace BS_Zoom_Demo.EntityFramework
 {
     public class BS_Zoom_DemoDbContext : AbpZeroDbContext<Tenant, Role, User>
     {
         //TODO: Define an IDbSet for your Entities...
+        public virtual IDbSet<Meeting> Meetings { get; set; }
+
+        public virtual IDbSet<Person> Teachers { get; set; }
 
         /* NOTE: 
          *   Setting "Default" to base class helps us when working migration commands on Package Manager Console.

@@ -8,5 +8,6 @@ namespace BS_Zoom_Demo.Web
         public const string Users = "Users";
         public const string Roles = "Roles";
         public const string Meetings = "Meetings";
+        public const string MeetingsList = "MeetingsList";
     }
 }

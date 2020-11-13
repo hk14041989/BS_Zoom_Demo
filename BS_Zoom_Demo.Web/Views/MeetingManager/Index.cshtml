@@ -1,0 +1,49 @@
+﻿@model BS_Zoom_Demo.Web.Models.Meetings.IndexViewModel
+
+@{
+    ViewBag.Title = L("MeetingList");
+    ViewBag.ActiveMenu = PageNames.MeetingsList; //Matches with the menu name in SimpleTaskAppNavigationProvider to highlight the menu item
+}
+
+@section scripts
+{
+    <environment names="Development">
+        <script src="~/Views/MeetingManager/index.js" asp-append-version="true"></script>
+    </environment>
+
+    <environment names="Staging,Production">
+        <script src="~/Views/MeetingManager/index.min.js" asp-append-version="true"></script>
+    </environment>
+}
+
+<h2>
+    @L("MeetingsList")
+    <span><a class="btn btn-primary btn-sm" asp-action="Create" id="AddNew">@L("AddNew")</a></span>
+    <span class="pull-right">
+        @Html.DropDownListFor(
+           model => model.SelectedMeetingState,
+           Model.GetMeetingsStateSelectListItems(Model.LocalizationManager),
+           new
+           {
+               @class = "form-control",
+               id = "MeetingStateCombobox"
+           })
+    </span>
+</h2>
+
+<div class="row">
+    <div>
+        <ul class="list-group" id="MeetingList">
+            @foreach (var meet in Model.Meetings)
+            {
+                <li class="list-group-item">
+                    <span class="pull-right label label-lg @Model.GetMeetingLabel(meet)">@L($"MeetingState_{meet.State}")</span>
+                    <h4 class="list-group-item-heading">@meet.Description</h4>
+                    <div class="list-group-item-text">
+                        @meet.CreationTime.ToString("yyyy-MM-dd HH:mm:ss") | @(meet.AssignedPersonName ?? L("Unassigned"))
+                    </div>
+                </li>
+            }
+        </ul>
+    </div>
+</div>

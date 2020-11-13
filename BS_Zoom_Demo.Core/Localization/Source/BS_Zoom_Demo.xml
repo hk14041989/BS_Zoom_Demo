@@ -4,8 +4,17 @@
     <text name="HomePage" value="Home page" />
     <text name="About" value="About" />
 	<text name="Meetings" value="Meetings" />
-    <text name="WellcomeMessage" value="Welcome to BS_Zoom_Demo!" />
-    
+	<text name="AddNew" value="Add New" />
+	<text name="MeetingsList" value="Meetings List" />
+	<text name="MeetingState_Active">Active</text>
+	<text name="AllMeetings">All Meetings</text>
+	<text name="Unassigned">Unassigned</text>
+	<text name="NewMeeting">New Meeting</text>
+	<text name="AssignedPerson">Assigned Person</text>
+	<text name="MeetingState_Completed">Completed</text>
+	<text name="Title">Title</text>
+	<text name="Description">Description</text>
+	<text name="WellcomeMessage" value="Welcome to BS_Zoom_Demo!" />    
     <text name="FormIsNotValidMessage" value="Form is not valid. Please check and fix errors." />
     <text name="TenantNameCanNotBeEmpty" value="Tenant name can not be empty" />
 
