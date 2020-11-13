@@ -15,7 +15,9 @@ namespace BS_Zoom_Demo
         {
             //I specified mapping for AssignedPersonId since NHibernate does not fill Task.AssignedPersonId
             //If you will just use EF, then you can remove ForMember definition.
-            mapper.CreateMap<Meeting, MeetingDto>().ForMember(t => t.AssignedPersonId, opts => opts.MapFrom(d => d.AssignedPerson.Id));
+            mapper.CreateMap<Meeting, MeetingDto>()
+                .ForMember(t => t.AssignedPersonId, opts => opts.MapFrom(d => d.AssignedPerson.Id))
+                .ForMember(t => t.AssignedPersonName, opts => opts.MapFrom(d => d.AssignedPerson.Name));
         }
     }
 }

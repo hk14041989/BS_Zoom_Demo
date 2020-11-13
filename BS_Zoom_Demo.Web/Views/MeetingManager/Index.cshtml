@@ -33,17 +33,172 @@
 
 <div class="row">
     <div>
-        <ul class="list-group" id="MeetingList">
-            @foreach (var meet in Model.Meetings)
-            {
-                <li class="list-group-item">
-                    <span class="pull-right label label-lg @Model.GetMeetingLabel(meet)">@L($"MeetingState_{meet.State}")</span>
-                    <h4 class="list-group-item-heading">@meet.Description</h4>
-                    <div class="list-group-item-text">
-                        @meet.CreationTime.ToString("yyyy-MM-dd HH:mm:ss") | @(meet.AssignedPersonName ?? L("Unassigned"))
+        <div class="row clearfix" id="MeetingList">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="header">
+                        <h2>
+                            @L("Meetings")
+                        </h2>
+                        <ul class="header-dropdown m-r--5">
+                            <li class="dropdown">
+                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <i class="material-icons">more_vert</i>
+                                </a>
+                                <ul class="dropdown-menu pull-right">
+                                    <li><a id="RefreshButton" href="javascript:void(0);" class="waves-effect waves-block"><i class="material-icons">refresh</i>Refresh</a></li>
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
-                </li>
-            }
-        </ul>
+                    <div class="body table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>@L("STT")</th>
+                                    <th>@L("TopicName")</th>
+                                    <th>@L("CreationTime")</th>
+                                    <th>@L("StartTime")</th>
+                                    <th>@L("EndTime")</th>
+                                    <th>@L("Duration")</th>
+                                    <th>@L("Teacher")</th>
+                                    <th>@L("Description")</th>
+                                    <th>@L("State")</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var meet in Model.Meetings)
+                                {
+                                    <tr>
+                                        <td>@meet.Id</td>
+                                        <td>@meet.TopicName</td>
+                                        <td>@meet.CreationTime</td>
+                                        <td>@meet.StartTime</td>
+                                        <td>@meet.EndTime</td>
+                                        <td>@meet.Duration</td>
+                                        <td>@meet.AssignedPersonName</td>
+                                        <td>@meet.Description</td>
+                                        <td>@meet.State</td>
+                                        <td class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                <i class="material-icons">menu</i>
+                                            </a>
+                                            <ul class="dropdown-menu pull-right">
+                                                <li><a href="#" class="waves-effect waves-block edit-user" data-user-id="@meet.Id" data-toggle="modal" data-target="#UserEditModal"><i class="material-icons">edit</i>@L("Edit")</a></li>
+                                                <li><a href="#" class="waves-effect waves-block delete-user" data-user-id="@meet.Id" data-user-name="@meet.TopicName"><i class="material-icons">delete_sweep</i>@L("Delete")</a></li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <button type="button" class="btn btn-primary btn-circle waves-effect waves-circle waves-float pull-right" data-toggle="modal" data-target="#MeetingCreateModal">
+                            <i class="material-icons">add</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+
+<div class="modal fade" id="MeetingCreateModal" tabindex="-1" role="dialog" aria-labelledby="MeetingCreateModalLabel" data-backdrop="static">
+    <div class="modal-dialog" role="document" style="width:80%">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    <span>@L("CreateNewMeeting")</span>
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form id="MeetingCreationForm" style="margin:30px;">
+                    <div class="row clearfix">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="card">
+                                <div class="header">
+                                    <h2>
+                                        Information
+                                    </h2>
+                                </div>
+                                <div class="body">
+                                    <input type="hidden" value="@Model.accessToken" id="accessToken" />
+                                    <input type="hidden" value="" id="meeting_id" />
+                                    <input type="hidden" value="" id="meetting_password" />
+                                    <input type="hidden" value="" id="tmpArgs" />
+                                    <div class="row" style="margin-bottom:auto; margin-top:auto;">
+                                        <div class="col-md-6">
+                                            <input type="text" name="topic_name" id="topic_name" value="" maxLength="100"
+                                                   placeholder="topic name" class="form-control">
+                                        </div>
+                                        <div class="col-md-2">
+                                            <input type="text" name="start_time" id="start_time" value="" placeholder="start_time" class="form-control">
+                                        </div>
+                                        <div class="col-md-2">
+                                            <input type="text" name="end_date_time" id="end_date_time" value="" placeholder="end date time" class="form-control">
+                                        </div>
+                                        <div class="col-md-2">
+                                            <input type="number" name="duration" id="duration" value="" placeholder="duration" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="row" style="margin-bottom:auto; margin-top:auto;">
+                                        <div class="col-md-2">
+                                            <input type="password" name="password" id="password" value="" placeholder="password" class="form-control">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text" name="agenda" id="agenda" value="" placeholder="meeting description" class="form-control">
+                                        </div>
+                                        <div class="col-md-2">
+                                            @Html.Label(L("AssignedPerson"))
+                                        </div>
+                                        <div class="col-md-2">
+                                            @Html.DropDownList(
+                                                "AssignedPersonId",
+                                                Model.Teachers,
+                                                new
+                                                {
+                                                    @class = "form-control",
+                                                    id = "AssignedPersonCombobox"
+                                                })
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">@L("Cancel")</button>
+                                        <button type="submit" class="btn btn-primary waves-effect" id="create_meeting">@L("Save")</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="MeetingEditModal" tabindex="-1" role="dialog" aria-labelledby="MeetingEditModalLabel" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="MeetingModal" tabindex="-1" role="dialog" aria-labelledby="MeetingModalLabel" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+        </div>
+    </div>
+</div>
+
+@*<script src="https://source.zoom.us/1.8.1/lib/vendor/react.min.js"></script>
+    <script src="https://source.zoom.us/1.8.1/lib/vendor/react-dom.min.js"></script>
+    <script src="https://source.zoom.us/1.8.1/lib/vendor/redux.min.js"></script>
+    <script src="https://source.zoom.us/1.8.1/lib/vendor/redux-thunk.min.js"></script>
+    <script src="https://source.zoom.us/1.8.1/lib/vendor/jquery.min.js"></script>
+    <script src="https://source.zoom.us/1.8.1/lib/vendor/lodash.min.js"></script>
+    <script src="https://source.zoom.us/zoom-meeting-1.8.1.min.js"></script>
+    <script src="~/Views/Meeting/vconsole.min.js"></script>
+    <script src="~/Views/Meeting/Index.js"></script>
+    <script src="~/Views/Meeting/tool.js"></script>
+    <script src="~/Views/Meeting/meeting.js"></script>*@

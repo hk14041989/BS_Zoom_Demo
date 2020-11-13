@@ -1,6 +1,5 @@
 ﻿(function ($) {
-    $(function () {
-
+    $(function () {        
         var _$form = $('#MeetingCreationForm');
 
         _$form.find('input:first').focus();
@@ -16,9 +15,9 @@
                 }
 
                 var input = _$form.serializeFormToObject();
-                abp.services.app.create(input)
+                abp.services.app.meeting.createMeeting(input, $('#accessToken').val())
                     .done(function () {
-                        location.href = '/MeetingManager';
+                        location.href = '/MeetingManager/Index';
                     });
             });
     });

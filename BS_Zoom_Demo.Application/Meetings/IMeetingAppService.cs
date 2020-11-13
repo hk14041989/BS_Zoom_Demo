@@ -9,6 +9,6 @@ namespace BS_Zoom_Demo.Meetings
 
         void UpdateMeeting(UpdateMeetingInput input);
 
-        void CreateMeeting(CreateMeetingInput input);
+        void CreateMeeting(CreateMeetingInput input, string accessToken);
     }
 }

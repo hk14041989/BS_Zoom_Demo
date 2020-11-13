@@ -12,6 +12,8 @@ namespace BS_Zoom_Demo.Meetings
         public const int MaxTitleLength = 256;
         public const int MaxDescriptionLength = 64 * 1024; //64KB
 
+        public virtual string TopicName { get; set; }
+
         /// <summary>
         /// A reference (navigation property) to assigned <see cref="Person"/> for this task.
         /// We declare <see cref="ForeignKeyAttribute"/> for EntityFramework here. No need for NHibernate.
@@ -35,19 +37,31 @@ namespace BS_Zoom_Demo.Meetings
         /// </summary>
         public virtual DateTime CreationTime { get; set; }
 
+        public virtual DateTime StartTime { get; set; }
+
+        public virtual DateTime EndTime { get; set; }
+
+        public virtual int Duration { get; set; }
+
         /// <summary>
         /// Current state of the task.
         /// </summary>
         public virtual MeetingState State { get; set; }
+
+        public virtual string AccessToken { get; set; }
+
+        public virtual string MeetingPass { get; set; }
+
+        public virtual long MeetingId { get; set; }
 
         /// <summary>
         /// Default costructor.
         /// Assigns some default values to properties.
         /// </summary>
         public Meeting()
-        {
-            CreationTime = DateTime.Now;
-            State = MeetingState.Active;
+        {         
+            CreationTime = DateTime.Now;            
+            State = MeetingState.Waiting;
         }
     }
 }

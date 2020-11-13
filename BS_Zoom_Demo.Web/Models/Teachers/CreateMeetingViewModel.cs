@@ -7,9 +7,12 @@ namespace BS_Zoom_Demo.Web.Models.Teachers
     {
         public List<SelectListItem> Teachers { get; set; }
 
-        public CreateMeetingViewModel(List<SelectListItem> teachers)
+        public string accessToken { get; set; }
+
+        public CreateMeetingViewModel(List<SelectListItem> teachers, string access_token)
         {
             Teachers = teachers;
+            accessToken = access_token;
         }
     }
 }

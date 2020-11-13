@@ -6,6 +6,6 @@ namespace BS_Zoom_Demo.Common
 {
     public interface ILookupAppService : IApplicationService
     {
-        Task<ListResultDto<ComboboxItemDto>> GetTeachersComboboxItems();
+        ListResultDto<ComboboxItemDto> GetTeachersComboboxItems();
     }
 }

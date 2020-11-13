@@ -5,6 +5,7 @@
     /// </summary>
     public enum MeetingState : byte
     {
+        Waiting = 0,
         /// <summary>
         /// The task is active.
         /// </summary>

@@ -15,11 +15,11 @@ namespace BS_Zoom_Demo.Common
             _personRepository = personRepository;
         }
 
-        public async Task<ListResultDto<ComboboxItemDto>> GetTeachersComboboxItems()
+        public ListResultDto<ComboboxItemDto> GetTeachersComboboxItems()
         {
-            var people = await _personRepository.GetAllListAsync();
+            var teachers = _personRepository.GetAllList();
             return new ListResultDto<ComboboxItemDto>(
-                people.Select(p => new ComboboxItemDto(p.Id.ToString("D"), p.Name)).ToList()
+                teachers.Select(p => new ComboboxItemDto(p.Id.ToString("D"), p.Name)).ToList()
             );
         }
     }

@@ -16,17 +16,25 @@ namespace BS_Zoom_Demo.Web.Models.Meetings
 
         public ILocalizationManager LocalizationManager;
 
-        public IndexViewModel(IReadOnlyList<MeetingDto> meetings, ILocalizationManager localizationManager)
+        public string accessToken { get; set; }
+
+        public List<SelectListItem> Teachers { get; set; }
+
+        public IndexViewModel(IReadOnlyList<MeetingDto> meetings, ILocalizationManager localizationManager, string access_token, List<SelectListItem> teachersSelectListItems)
         {
             Meetings = meetings;
             LocalizationManager = localizationManager;
+            accessToken = access_token;
+            Teachers = teachersSelectListItems;
         }
 
         public string GetMeetingLabel(MeetingDto meeting)
         {
             switch (meeting.State)
             {
-                case (byte)MeetingState.Active:
+                case MeetingState.Waiting:
+                    return "label-default";
+                case MeetingState.Active:
                     return "label-success";
                 default:
                     return "label-default";
