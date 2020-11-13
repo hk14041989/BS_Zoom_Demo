@@ -19,7 +19,7 @@ namespace BS_Zoom_Demo.Web.Controllers
         // GET: Meeting
         public ActionResult Index()
         {
-            ViewBag.newJWTToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOm51bGwsImlzcyI6InZTX0U0c0szUzd1RkVKazZJNzZLcnciLCJleHAiOjE2MDUyMzY4NzksImlhdCI6MTYwNDYzMjA4Mn0.EewFFC3M3id1AIs9TuDPo2JLMSABrUzoGniXlcgbt6s";
+            ViewBag.newJWTToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOm51bGwsImlzcyI6InZTX0U0c0szUzd1RkVKazZJNzZLcnciLCJleHAiOjE2MDU4MzYyMTcsImlhdCI6MTYwNTIzMTQxOX0.1gBHm9OGgeSPwcHE3JfDbfPVb_d1XqlqmHwRhx7FaPM";
             return View();
         }
 
