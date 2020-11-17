@@ -30,6 +30,7 @@
            })
     </span>
 </h2>
+<input type="hidden" name="display_name" id="display_name" value="1.8.1#CDN" maxLength="100" class="form-control">
 
 <div class="row">
     <div>
@@ -86,8 +87,8 @@
                                             <ul class="dropdown-menu pull-right">
                                                 <li><a href="#" class="waves-effect waves-block edit-meeting" data-meeting-id="@meet.Id" data-toggle="modal" data-target="#MeetingEditModal"><i class="material-icons">edit</i>@L("Edit")</a></li>
                                                 <li><a href="#" class="waves-effect waves-block delete-meeting" data-meeting-id="@meet.Id" data-meeting-name="@meet.TopicName"><i class="material-icons">delete_sweep</i>@L("Delete")</a></li>
-                                                <li><a href="#" class="waves-effect waves-block join-host" data-meeting-id="@meet.MeetingId" data-meeting-type="1" data-toggle="modal" data-target="#MeetingJoinModal"><i class="material-icons">edit</i>@L("JoinHost")</a></li>
-                                                <li><a href="#" class="waves-effect waves-block join-attendee" data-meeting-id="@meet.MeetingId" data-meeting-type="0" data-toggle="modal" data-target="#MeetingJoinModal"><i class="material-icons">edit</i>@L("JoinAttendee")</a></li>                                                
+                                                <li><a href="#" class="waves-effect waves-block join-host" data-meeting-id="@meet.MeetingId" data-meeting-pass="@meet.MeetingPass" data-meeting-type="1" data-toggle="modal" data-target="#MeetingJoinModal"><i class="material-icons">edit</i>@L("JoinHost")</a></li>
+                                                <li><a href="#" class="waves-effect waves-block join-attendee" data-meeting-id="@meet.MeetingId" data-meeting-pass="@meet.MeetingPass" data-meeting-type="0" data-toggle="modal" data-target="#MeetingJoinModal"><i class="material-icons">edit</i>@L("JoinAttendee")</a></li>
                                             </ul>
                                         </td>
                                     </tr>
@@ -193,14 +194,12 @@
     </div>
 </div>
 
-@*<script src="https://source.zoom.us/1.8.1/lib/vendor/react.min.js"></script>
-    <script src="https://source.zoom.us/1.8.1/lib/vendor/react-dom.min.js"></script>
-    <script src="https://source.zoom.us/1.8.1/lib/vendor/redux.min.js"></script>
-    <script src="https://source.zoom.us/1.8.1/lib/vendor/redux-thunk.min.js"></script>
-    <script src="https://source.zoom.us/1.8.1/lib/vendor/jquery.min.js"></script>
-    <script src="https://source.zoom.us/1.8.1/lib/vendor/lodash.min.js"></script>
-    <script src="https://source.zoom.us/zoom-meeting-1.8.1.min.js"></script>
-    <script src="~/Views/Meeting/vconsole.min.js"></script>
-    <script src="~/Views/Meeting/Index.js"></script>
-    <script src="~/Views/Meeting/tool.js"></script>
-    <script src="~/Views/Meeting/meeting.js"></script>*@
+<script src="https://source.zoom.us/1.8.1/lib/vendor/react.min.js"></script>
+<script src="https://source.zoom.us/1.8.1/lib/vendor/react-dom.min.js"></script>
+<script src="https://source.zoom.us/1.8.1/lib/vendor/redux.min.js"></script>
+<script src="https://source.zoom.us/1.8.1/lib/vendor/redux-thunk.min.js"></script>
+<script src="https://source.zoom.us/1.8.1/lib/vendor/jquery.min.js"></script>
+<script src="https://source.zoom.us/1.8.1/lib/vendor/lodash.min.js"></script>
+<script src="https://source.zoom.us/zoom-meeting-1.8.1.min.js"></script>
+<script src="~/Views/MeetingManager/vconsole.min.js"></script>
+<script src="~/Views/MeetingManager/tool.js"></script>

@@ -2771,11 +2771,9 @@
     <Content Include="Views\MeetingManager\Create.min.js" />
     <Content Include="Views\MeetingManager\index.js" />
     <Content Include="Views\MeetingManager\index.min.js" />
+    <Content Include="Views\MeetingManager\tool.js" />
+    <Content Include="Views\MeetingManager\vconsole.min.js" />
     <Content Include="Views\MeetingManager\_EditMeetingModal.js" />
-    <Content Include="Views\Meeting\Index.js" />
-    <Content Include="Views\Meeting\meeting.js" />
-    <Content Include="Views\Meeting\tool.js" />
-    <Content Include="Views\Meeting\vconsole.min.js" />
     <Content Include="Views\Roles\Index.js" />
     <Content Include="Views\Roles\_EditRoleModal.js" />
     <Content Include="Views\Shared\_Layout.css" />
@@ -2801,7 +2799,6 @@
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\MeetingController.cs" />
     <Compile Include="Controllers\MeetingManagerController.cs" />
     <Compile Include="Controllers\Results\ChallengeResult.cs" />
     <Compile Include="Controllers\RolesController.cs" />
@@ -2956,11 +2953,10 @@
     </None>
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
-    <Content Include="Views\Meeting\Index.cshtml" />
-    <Content Include="Views\Meeting\_Meeting.cshtml" />
     <Content Include="Views\MeetingManager\Index.cshtml" />
     <Content Include="Views\MeetingManager\Create.cshtml" />
     <Content Include="Views\MeetingManager\_EditMeetingModal.cshtml" />
+    <Content Include="Views\MeetingManager\_Meeting.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

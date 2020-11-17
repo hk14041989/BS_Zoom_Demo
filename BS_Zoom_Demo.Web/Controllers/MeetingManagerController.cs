@@ -1,4 +1,6 @@
 ﻿using Abp.Application.Services.Dto;
+using Abp.Web.Mvc.Authorization;
+using BS_Zoom_Demo.Authorization;
 using BS_Zoom_Demo.Common;
 using BS_Zoom_Demo.Meetings;
 using BS_Zoom_Demo.Meetings.Dtos;
@@ -11,12 +13,13 @@ using System.Web.Mvc;
 
 namespace BS_Zoom_Demo.Web.Controllers
 {
+    [AbpMvcAuthorize(PermissionNames.Pages_MeetingsList)]
     public class MeetingManagerController : BS_Zoom_DemoControllerBase
     {
         private readonly IMeetingAppService _meetingAppService;
         private readonly IMeetingRepository _meetingRepository;
         private readonly ILookupAppService _lookupAppService;
-        private readonly string JWTToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOm51bGwsImlzcyI6InZTX0U0c0szUzd1RkVKazZJNzZLcnciLCJleHAiOjE2MDYwOTQ1NjUsImlhdCI6MTYwNTQ4OTc3MX0.ShXotWc-n6Hvm1-FHHpkp4Qf8uNWS97kJVDY5p72q5A";
+        private readonly string JWTToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOm51bGwsImlzcyI6InZTX0U0c0szUzd1RkVKazZJNzZLcnciLCJleHAiOjE2MDU2MDY5ODIsImlhdCI6MTYwNTYwMTU4M30.vesjpWrYc13Slu8h-3mNEG68KrsLaXm5O-EMeFqCmwk";
         public List<SelectListItem> teachersSelectListItems = new List<SelectListItem>();
 
         public MeetingManagerController(
@@ -84,6 +87,11 @@ namespace BS_Zoom_Demo.Web.Controllers
             model.Teachers = teachersSelectListItems;
 
             return View("_EditMeetingModal", model);
+        }
+
+        public ActionResult JoinMeetingHost()
+        {
+            return View("_Meeting");
         }
     }
 }

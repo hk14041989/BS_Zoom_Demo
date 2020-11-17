@@ -34,7 +34,7 @@ namespace BS_Zoom_Demo.EntityFramework.Repositories
             }
 
             return query
-                .OrderByDescending(meeting => meeting.CreationTime)
+                .OrderBy(meeting => meeting.Id)
                 .Include(meeting => meeting.AssignedPerson) //Include assigned person in a single query
                 .ToList();
         }

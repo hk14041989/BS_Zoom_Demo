@@ -159,7 +159,7 @@ namespace BS_Zoom_Demo.Meetings
                     participant_video = false,
                     cn_meeting = false,
                     in_meeting = false,
-                    join_before_host = false,
+                    join_before_host = true,
                     mute_upon_entry = false,
                     watermark = false,
                     usePmi = false,

@@ -56,14 +56,6 @@ namespace BS_Zoom_Demo.Web
                         url: "About",
                         icon: "info"
                     )
-                ) .AddItem(
-                    new MenuItemDefinition(
-                        PageNames.Meetings,
-                        L("Meetings"),
-                        url: "Meeting",
-                        icon: "people",
-                        permissionDependency: new SimplePermissionDependency(PermissionNames.Pages_Meetings)
-                    )
                 ).AddItem(
                     new MenuItemDefinition(
                         PageNames.MeetingsList,
