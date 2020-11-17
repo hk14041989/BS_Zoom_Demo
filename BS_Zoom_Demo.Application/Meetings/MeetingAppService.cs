@@ -1,4 +1,5 @@
 ﻿using Abp.Application.Services;
+using Abp.Application.Services.Dto;
 using Abp.Domain.Repositories;
 using AutoMapper;
 using BS_Zoom_Demo.Meetings.Dtos;
@@ -38,7 +39,7 @@ namespace BS_Zoom_Demo.Meetings
         {
             var result = new GetMeetingsOutput();
 
-            //Called specific GetAllWithPeople method of task repository.
+            //Called specific GetAllWithPeople method of meeting repository.
             var meetings = _meetingRepository.GetAllWithTeachers(input.AssignedPersonId, input.State);
 
             result.Meetings = new List<MeetingDto>();
@@ -64,30 +65,41 @@ namespace BS_Zoom_Demo.Meetings
 
                 result.Meetings.Add(temp);
             }
-
-            //Used AutoMapper to automatically convert List<Task> to List<TaskDto>.
+          
             return result;
         }
 
-        public void UpdateMeeting(UpdateMeetingInput input)
+        public void UpdateMeeting(UpdateMeetingInput input, string meetingPass)
         {
             //We can use Logger, it's defined in ApplicationService base class.
-            Logger.Info("Updating a task for input: " + input);
+            Logger.Info("Updating a meeting for input: " + input);
 
-            //Retrieving a task entity with given id using standard Get method of repositories.
+            //Retrieving a meeting entity with given id using standard Get method of repositories.
             var task = _meetingRepository.Get(input.MeetingId);
 
-            //Updating changed properties of the retrieved task entity.
-
+            //Updating changed properties of the retrieved meeting entity.
             if (input.State.HasValue)
-            {
                 task.State = input.State.Value;
-            }
 
             if (input.AssignedPersonId.HasValue)
-            {
                 task.AssignedPerson = _personRepository.Load(input.AssignedPersonId.Value);
-            }
+
+            if (!string.IsNullOrEmpty(input.topic_name))
+                task.TopicName = input.topic_name;
+
+            if (!string.IsNullOrEmpty(meetingPass))
+                task.MeetingPass = meetingPass;
+
+            if (!string.IsNullOrEmpty(input.start_time))
+                task.StartTime = DateTime.Parse(input.start_time);
+
+            if (!string.IsNullOrEmpty(input.end_date_time))
+                task.EndTime = DateTime.Parse(input.end_date_time);
+
+            if (!string.IsNullOrEmpty(input.agenda))
+                task.Description = input.agenda;
+
+            task.Duration = input.duration;
 
             //We even do not call Update method of the repository.
             //Because an application service method is a 'unit of work' scope as default.
@@ -97,15 +109,17 @@ namespace BS_Zoom_Demo.Meetings
         public void CreateMeeting(CreateMeetingInput input, string accessToken)
         {
             //We can use Logger, it's defined in ApplicationService class.
-            Logger.Info("Creating a task for input: " + input);
+            Logger.Info("Creating a meeting for input: " + input);
 
-            //Creating a new Task entity with given input's properties
-            var meeting = new Meeting();
-            meeting.TopicName = input.topic_name;
-            meeting.MeetingPass = input.password;
-            meeting.Description = input.agenda;
-            meeting.StartTime = DateTime.Parse(input.start_time);
-            meeting.EndTime = DateTime.Parse(input.end_date_time);
+            //Creating a new Meeting entity with given input's properties
+            var meeting = new Meeting
+            {
+                TopicName = input.topic_name,
+                MeetingPass = input.password,
+                Description = input.agenda,
+                StartTime = DateTime.Parse(input.start_time),
+                EndTime = DateTime.Parse(input.end_date_time)
+            };
 
             if (input.AssignedPersonId.HasValue)
             {
@@ -136,7 +150,7 @@ namespace BS_Zoom_Demo.Meetings
                     monthly_week = 1,
                     monthly_week_day = 1,
                     end_times = 1,
-                    end_date_time = input.end_date_time,
+                    input.end_date_time,
 
                 },
                 setting = new
@@ -158,7 +172,7 @@ namespace BS_Zoom_Demo.Meetings
                     alternative_hosts = "",
                     global_dial_in_countries = new string[]
                     {
-                            "",
+                        "",
                     },
                     registrants_email_notification = false
                 },
@@ -179,5 +193,11 @@ namespace BS_Zoom_Demo.Meetings
                 _meetingRepository.Insert(meeting);
             }           
         }
+
+        public void Delete(EntityDto<long> input)
+        {
+            var meeting = _meetingRepository.GetMeetingById(input.Id);
+            _meetingRepository.Delete(meeting);
+        }        
     }
 }

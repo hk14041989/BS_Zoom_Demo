@@ -38,5 +38,20 @@ namespace BS_Zoom_Demo.EntityFramework.Repositories
                 .Include(meeting => meeting.AssignedPerson) //Include assigned person in a single query
                 .ToList();
         }
+
+        public Meeting GetMeetingById(long meetingId)
+        {
+            //In repository methods, we do not deal with create/dispose DB connections, DbContexes and transactions. ABP handles it.
+
+            var query = GetAll(); //GetAll() returns IQueryable<T>, so we can query over it.
+            //var query = Context.Tasks.AsQueryable(); //Alternatively, we can directly use EF's DbContext object.
+            //var query = Table.AsQueryable(); //Another alternative: We can directly use 'Table' property instead of 'Context.Tasks', they are identical.
+
+            //Add some Where conditions...
+
+            query = query.Where(meeting => meeting.Id == meetingId);
+
+            return query.FirstOrDefault();
+        }
     }
 }

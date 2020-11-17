@@ -26,8 +26,11 @@
 		<text name="Duration" value="Duration"></text>
 		<text name="Teacher" value="Teacher"></text>
 		<text name="State" value="State"></text>
-		<text name="CreateNewMeeting" value="Create New Meeting"></text>		
-
+		<text name="CreateNewMeeting" value="Create New Meeting"></text>
+		<text name="JoinHost" value="Join Host"></text>
+		<text name="JoinAttendee" value="Join Attendee"></text>
+		<text name="EditMeeting" value="Edit Meeting"></text>
+		
 		<text name="InvalidUserNameOrPassword" value="Invalid user name or password" />
 		<text name="ThereIsNoTenantDefinedWithName{0}" value="There is no tenant defined with name {0}" />
 		<text name="TenantIsNotActive" value="Tenant {0} is not active." />

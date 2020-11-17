@@ -1,10 +1,5 @@
 ﻿using Abp.Runtime.Validation;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BS_Zoom_Demo.Meetings.Dtos
 {
@@ -17,13 +12,24 @@ namespace BS_Zoom_Demo.Meetings.Dtos
 
         public MeetingState? State { get; set; }
 
+        public string topic_name { get; set; }
+
+        public string start_time { get; set; }
+
+        public string end_date_time { get; set; }
+
+        public int duration { get; set; }
+
+        public string meetting_password { get; set; }
+
+        public string agenda { get; set; }
+
         //Custom validation method. It's called by ABP after data annotation validations.
         public void AddValidationErrors(CustomValidationContext context)
         {
-            if (AssignedPersonId == null && State == null)
-            {
-                context.Results.Add(new ValidationResult("Both of AssignedPersonId and State can not be null in order to update a Meeting!", new[] { "AssignedPersonId", "State" }));
-            }
+            if (string.IsNullOrEmpty(topic_name) && string.IsNullOrEmpty(start_time) && string.IsNullOrEmpty(end_date_time) && string.IsNullOrEmpty(meetting_password) 
+                && duration == null)
+                context.Results.Add(new ValidationResult("Topic Name, Start Time, End Time and Duration can not be null in order to update a Meeting!", new[] { "AssignedPersonId", "State" }));
         }
 
         public override string ToString()

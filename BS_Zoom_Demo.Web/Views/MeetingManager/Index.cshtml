@@ -84,8 +84,10 @@
                                                 <i class="material-icons">menu</i>
                                             </a>
                                             <ul class="dropdown-menu pull-right">
-                                                <li><a href="#" class="waves-effect waves-block edit-user" data-user-id="@meet.Id" data-toggle="modal" data-target="#UserEditModal"><i class="material-icons">edit</i>@L("Edit")</a></li>
-                                                <li><a href="#" class="waves-effect waves-block delete-user" data-user-id="@meet.Id" data-user-name="@meet.TopicName"><i class="material-icons">delete_sweep</i>@L("Delete")</a></li>
+                                                <li><a href="#" class="waves-effect waves-block edit-meeting" data-meeting-id="@meet.Id" data-toggle="modal" data-target="#MeetingEditModal"><i class="material-icons">edit</i>@L("Edit")</a></li>
+                                                <li><a href="#" class="waves-effect waves-block delete-meeting" data-meeting-id="@meet.Id" data-meeting-name="@meet.TopicName"><i class="material-icons">delete_sweep</i>@L("Delete")</a></li>
+                                                <li><a href="#" class="waves-effect waves-block join-host" data-meeting-id="@meet.MeetingId" data-meeting-type="1" data-toggle="modal" data-target="#MeetingJoinModal"><i class="material-icons">edit</i>@L("JoinHost")</a></li>
+                                                <li><a href="#" class="waves-effect waves-block join-attendee" data-meeting-id="@meet.MeetingId" data-meeting-type="0" data-toggle="modal" data-target="#MeetingJoinModal"><i class="material-icons">edit</i>@L("JoinAttendee")</a></li>                                                
                                             </ul>
                                         </td>
                                     </tr>
@@ -176,7 +178,7 @@
 </div>
 
 <div class="modal fade" id="MeetingEditModal" tabindex="-1" role="dialog" aria-labelledby="MeetingEditModalLabel" data-backdrop="static">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog" role="document" style="width:80%">
         <div class="modal-content">
 
         </div>

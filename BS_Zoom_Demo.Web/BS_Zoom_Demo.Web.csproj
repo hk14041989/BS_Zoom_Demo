@@ -2771,6 +2771,7 @@
     <Content Include="Views\MeetingManager\Create.min.js" />
     <Content Include="Views\MeetingManager\index.js" />
     <Content Include="Views\MeetingManager\index.min.js" />
+    <Content Include="Views\MeetingManager\_EditMeetingModal.js" />
     <Content Include="Views\Meeting\Index.js" />
     <Content Include="Views\Meeting\meeting.js" />
     <Content Include="Views\Meeting\tool.js" />
@@ -2824,6 +2825,7 @@
     </Compile>
     <Compile Include="Models\Layout\SideBarNavViewModel.cs" />
     <Compile Include="Models\Layout\SideBarUserAreaViewModel.cs" />
+    <Compile Include="Models\Meetings\EditMeetingModalViewModel.cs" />
     <Compile Include="Models\Meetings\IndexViewModel.cs" />
     <Compile Include="Models\Roles\EditRoleModalViewModel.cs" />
     <Compile Include="Models\Roles\RoleListViewModel.cs" />
@@ -2958,6 +2960,7 @@
     <Content Include="Views\Meeting\_Meeting.cshtml" />
     <Content Include="Views\MeetingManager\Index.cshtml" />
     <Content Include="Views\MeetingManager\Create.cshtml" />
+    <Content Include="Views\MeetingManager\_EditMeetingModal.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

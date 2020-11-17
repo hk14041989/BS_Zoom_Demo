@@ -22,5 +22,7 @@ namespace BS_Zoom_Demo.Meetings
         /// <param name="state">Optional state filter. If it's null, not filtered.</param>
         /// <returns>List of found tasks</returns>
         List<Meeting> GetAllWithTeachers(int? assignedPersonId, MeetingState? state);
+
+        Meeting GetMeetingById(long meetingId);
     }
 }
