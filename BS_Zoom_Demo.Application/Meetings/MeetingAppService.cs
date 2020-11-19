@@ -199,5 +199,53 @@ namespace BS_Zoom_Demo.Meetings
             var meeting = _meetingRepository.GetMeetingById(input.Id);
             _meetingRepository.Delete(meeting);
         }        
+
+        public string GetMeetingInfor(long meetingId, string accessToken)
+        {
+            try
+            {
+                string result = "";
+
+                var client = new RestClient("https://api.zoom.us/v2/meetings/" + meetingId);
+                var request = new RestRequest(Method.GET);
+                request.AddHeader("content-type", "application/json");
+                request.AddHeader("authorization", "Bearer " + accessToken);
+                request.AddParameter("application/json", "", ParameterType.RequestBody);
+
+                IRestResponse response = client.Execute(request);
+
+                if (response.StatusCode == HttpStatusCode.Unauthorized)
+                {
+                    accessToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOm51bGwsImlzcyI6InZTX0U0c0szUzd1RkVKazZJNzZLcnciLCJleHAiOjE2MDU3NTg4MTcsImlhdCI6MTYwNTc1MzQxOH0.bYkymeHzYKo6nQGV2LilCKOtbCCjhrplDLmIyw1HtQ8";
+                    request = new RestRequest(Method.GET);
+                    request.AddHeader("authorization", "Bearer " + accessToken);
+                    request.AddParameter("application/json", "", ParameterType.RequestBody);
+
+                    response = client.Execute(request);
+                }
+
+                result = response.Content.ToString();
+
+                return result;
+            }
+            catch (Exception)
+            {
+                return "";
+            }
+        }
+
+        public bool UpdateMeetingInfor(long meetingId, string accessToken)
+        {
+            try
+            {
+
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }

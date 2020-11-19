@@ -19,7 +19,7 @@ namespace BS_Zoom_Demo.Web.Controllers
         private readonly IMeetingAppService _meetingAppService;
         private readonly IMeetingRepository _meetingRepository;
         private readonly ILookupAppService _lookupAppService;
-        private readonly string JWTToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOm51bGwsImlzcyI6InZTX0U0c0szUzd1RkVKazZJNzZLcnciLCJleHAiOjE2MDU2MDY5ODIsImlhdCI6MTYwNTYwMTU4M30.vesjpWrYc13Slu8h-3mNEG68KrsLaXm5O-EMeFqCmwk";
+        private readonly string JWTToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOm51bGwsImlzcyI6InZTX0U0c0szUzd1RkVKazZJNzZLcnciLCJleHAiOjE2MDYzNTUwNjUsImlhdCI6MTYwNTc1MDI2Nn0.RR1O3f-TCmnqdC9M9s1iKgEybQCdsW-QORn3zDI2dis";
         public List<SelectListItem> teachersSelectListItems = new List<SelectListItem>();
 
         public MeetingManagerController(
@@ -29,7 +29,6 @@ namespace BS_Zoom_Demo.Web.Controllers
             _lookupAppService = lookupAppService;
             _meetingRepository = meetingRepository;
         }
-
 
         // GET: MeetingManager
         public ActionResult Index(GetMeetingsInput input)
@@ -52,6 +51,12 @@ namespace BS_Zoom_Demo.Web.Controllers
 
         public ActionResult Create()
         {
+            teachersSelectListItems = _lookupAppService.GetTeachersComboboxItems().Items
+                .Select(p => p.ToSelectListItem())
+                .ToList();
+
+            teachersSelectListItems.Insert(0, new SelectListItem { Value = string.Empty, Text = L("Unassigned"), Selected = true });
+
             return View(new CreateMeetingViewModel(teachersSelectListItems, JWTToken));
         }
 
@@ -92,6 +97,20 @@ namespace BS_Zoom_Demo.Web.Controllers
         public ActionResult JoinMeetingHost()
         {
             return View("_Meeting");
+        }
+
+        public JsonResult GetMeetingInfor(long meetingId, string accessToken)
+        {
+            string content = _meetingAppService.GetMeetingInfor(meetingId, accessToken);
+
+            return OK(new { content });
+        }
+
+        public ActionResult UpdateMeetingInfor(long meetingId, string accessToken)
+        {
+            var result = _meetingAppService.UpdateMeetingInfor(meetingId, accessToken);
+
+            return OK(new { result });
         }
     }
 }

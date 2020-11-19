@@ -65,6 +65,7 @@
                                     <th>@L("Teacher")</th>
                                     <th>@L("Description")</th>
                                     <th>@L("State")</th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -80,6 +81,9 @@
                                         <td>@meet.AssignedPersonName</td>
                                         <td>@meet.Description</td>
                                         <td>@meet.State</td>
+                                        <td>
+                                            <button type="button" class="btn btn-primary btn-sm get-information" data-meeting-id="@meet.MeetingId" data-meeting-access-token="@meet.AccessToken">Get Meeting Information</button>
+                                        </td>
                                         <td class="dropdown">
                                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                                 <i class="material-icons">menu</i>

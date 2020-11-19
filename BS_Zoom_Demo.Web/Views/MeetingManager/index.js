@@ -1,5 +1,5 @@
 ﻿(function ($) {
-    $(function () { 
+    $(function () {
         var _$form = $('#MeetingCreateModal');
 
         _$form.find('input:first').focus();
@@ -25,6 +25,22 @@
 
         $('#AddNew').click(function () {
             location.href = '/MeetingManager/Create'
+        });
+
+        $('.get-information').click(function (e) {
+            var meetingId = $(this).attr("data-meeting-id");
+            var meetingAccess = $(this).attr("data-meeting-access-token");
+
+            e.preventDefault();
+            abp.ajax({
+                url: abp.appPath + 'MeetingManager/GetMeetingInfor?meetingId=' + meetingId + '&&accessToken=' + meetingAccess,
+                type: 'POST',
+                dataType: 'html',
+                success: function (content) {
+                    alert(content);
+                },
+                error: function (e) { }
+            });
         });
 
         $('.edit-meeting').click(function (e) {
