@@ -296,9 +296,8 @@ namespace BS_Zoom_Demo.Meetings
 
                 response = client.Execute(request);                
             }
-              
-            if (response.StatusCode == HttpStatusCode.OK)
-                _meetingRepository.Delete(meeting);
+                          
+            _meetingRepository.Delete(meeting);
         }        
 
         public string GetMeetingInfor(long meetingId, string accessToken)
