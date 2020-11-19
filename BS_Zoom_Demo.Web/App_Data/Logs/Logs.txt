@@ -4978,3 +4978,282 @@ WARN  2020-11-19 09:41:35,549 [30   ] naries.DictionaryBasedLocalizationSource -
 DEBUG 2020-11-19 09:41:40,202 [17   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"dfa7b8f0-f239-4a8e-88ce-0299df7f0256","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2020-11-19T09:41:40.2028601+07:00","Properties":{}}
 DEBUG 2020-11-19 09:41:40,235 [17   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: dfa7b8f0-f239-4a8e-88ce-0299df7f0256
 DEBUG 2020-11-19 09:42:05,917 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 52daad3b-e207-4da2-80be-185a9ae0b503
+DEBUG 2020-11-19 10:24:15,514 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2020-11-19 10:24:15,533 [1    ] Abp.Modules.AbpModuleManager             - Found 17 ABP modules in total.
+DEBUG 2020-11-19 10:24:15,541 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BS_Zoom_Demo.Web.BS_Zoom_DemoWebModule, BS_Zoom_Demo.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-19 10:24:15,543 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BS_Zoom_Demo.BS_Zoom_DemoDataModule, BS_Zoom_Demo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-19 10:24:15,543 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-19 10:24:15,543 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-19 10:24:15,543 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-19 10:24:15,543 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-19 10:24:15,544 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-19 10:24:15,544 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-19 10:24:15,544 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BS_Zoom_Demo.BS_Zoom_DemoCoreModule, BS_Zoom_Demo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-19 10:24:15,545 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BS_Zoom_Demo.BS_Zoom_DemoApplicationModule, BS_Zoom_Demo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-19 10:24:15,545 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-19 10:24:15,545 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BS_Zoom_Demo.Api.BS_Zoom_DemoWebApiModule, BS_Zoom_Demo.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-19 10:24:15,545 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-19 10:24:15,545 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-19 10:24:15,545 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-19 10:24:15,545 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-19 10:24:15,546 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-19 10:24:15,549 [1    ] Abp.Modules.AbpModuleManager             - 17 modules loaded.
+DEBUG 2020-11-19 10:24:15,911 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-11-19 10:24:15,911 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-11-19 10:24:15,911 [1    ] o.Configuration.LanguageManagementConfig - Converted BS_Zoom_Demo (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-11-19 10:24:15,911 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-11-19 10:24:16,428 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: BS_Zoom_Demo.EntityFramework.BS_Zoom_DemoDbContext, BS_Zoom_Demo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-19 10:24:20,098 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2020-11-19 10:24:20,182 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2020-11-19 10:24:20,246 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2020-11-19 10:24:20,268 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: BS_Zoom_Demo
+DEBUG 2020-11-19 10:24:20,322 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2020-11-19 10:24:20,502 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Castle.Proxies.BackgroundJobManagerProxy
+DEBUG 2020-11-19 10:24:20,580 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 12 classes define auto mapping attributes
+DEBUG 2020-11-19 10:24:20,580 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BS_Zoom_Demo.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2020-11-19 10:24:20,588 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BS_Zoom_Demo.Sessions.Dto.UserLoginInfoDto
+DEBUG 2020-11-19 10:24:20,589 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BS_Zoom_Demo.Users.Dto.CreateUserDto
+DEBUG 2020-11-19 10:24:20,589 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BS_Zoom_Demo.Users.Dto.UpdateUserDto
+DEBUG 2020-11-19 10:24:20,589 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BS_Zoom_Demo.Users.Dto.UserDto
+DEBUG 2020-11-19 10:24:20,589 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BS_Zoom_Demo.Teachers.Dtos.PersonDto
+DEBUG 2020-11-19 10:24:20,589 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BS_Zoom_Demo.Roles.Dto.PermissionDto
+DEBUG 2020-11-19 10:24:20,589 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BS_Zoom_Demo.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2020-11-19 10:24:20,590 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BS_Zoom_Demo.MultiTenancy.Dto.EditTenantDto
+DEBUG 2020-11-19 10:24:20,590 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BS_Zoom_Demo.MultiTenancy.Dto.TenantDto
+DEBUG 2020-11-19 10:24:20,590 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BS_Zoom_Demo.Web.Models.Account.TenantChangeViewModel
+DEBUG 2020-11-19 10:24:20,590 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BS_Zoom_Demo.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2020-11-19 10:24:23,794 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BS_Zoom_Demo.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2020-11-19 10:24:23,796 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BS_Zoom_Demo.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2020-11-19 10:24:23,797 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BS_Zoom_Demo.Teachers.IPersonAppService' with service name 'app/person'.
+DEBUG 2020-11-19 10:24:23,798 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BS_Zoom_Demo.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2020-11-19 10:24:23,799 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BS_Zoom_Demo.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2020-11-19 10:24:23,800 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BS_Zoom_Demo.Meetings.IMeetingAppService' with service name 'app/meeting'.
+DEBUG 2020-11-19 10:24:23,801 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BS_Zoom_Demo.Configuration.IConfigurationAppService' with service name 'app/configuration'.
+DEBUG 2020-11-19 10:24:23,802 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BS_Zoom_Demo.Common.ILookupAppService' with service name 'app/lookup'.
+DEBUG 2020-11-19 10:24:23,808 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BS_Zoom_Demo.Authorization.Accounts.IAccountAppService' with service name 'app/account'.
+DEBUG 2020-11-19 10:24:38,517 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"db4b74a0-5408-4586-982a-22dcfef376a2","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2020-11-19T10:24:38.50816+07:00","Properties":{}}
+DEBUG 2020-11-19 10:24:38,579 [5    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: db4b74a0-5408-4586-982a-22dcfef376a2
+WARN  2020-11-19 10:24:41,321 [8    ] naries.DictionaryBasedLocalizationSource - Can not find 'MeetingList' in localization source 'BS_Zoom_Demo'!
+DEBUG 2020-11-19 10:24:42,709 [11   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"4d469407-35fb-4d43-9274-b7cfe0ce32fd","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2020-11-19T10:24:42.7097148+07:00","Properties":{}}
+DEBUG 2020-11-19 10:24:42,723 [5    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 4d469407-35fb-4d43-9274-b7cfe0ce32fd
+DEBUG 2020-11-19 10:25:18,429 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: db4b74a0-5408-4586-982a-22dcfef376a2
+WARN  2020-11-19 10:25:57,544 [5    ] naries.DictionaryBasedLocalizationSource - Can not find 'MeetingList' in localization source 'BS_Zoom_Demo'!
+DEBUG 2020-11-19 10:26:01,688 [18   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"b3ed6f86-4871-4f6e-804f-43e4ba158045","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2020-11-19T10:26:01.686995+07:00","Properties":{}}
+DEBUG 2020-11-19 10:26:01,714 [10   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: b3ed6f86-4871-4f6e-804f-43e4ba158045
+DEBUG 2020-11-19 10:26:28,827 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 4d469407-35fb-4d43-9274-b7cfe0ce32fd
+WARN  2020-11-19 10:26:35,727 [8    ] naries.DictionaryBasedLocalizationSource - Can not find 'MeetingList' in localization source 'BS_Zoom_Demo'!
+DEBUG 2020-11-19 10:26:36,831 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: b3ed6f86-4871-4f6e-804f-43e4ba158045
+DEBUG 2020-11-19 10:26:41,056 [30   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"5d893003-6315-41b6-8536-64b543cdc2ae","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2020-11-19T10:26:41.0567329+07:00","Properties":{}}
+DEBUG 2020-11-19 10:26:41,072 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 5d893003-6315-41b6-8536-64b543cdc2ae
+WARN  2020-11-19 10:27:38,909 [31   ] naries.DictionaryBasedLocalizationSource - Can not find 'MeetingList' in localization source 'BS_Zoom_Demo'!
+DEBUG 2020-11-19 10:27:44,486 [31   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"2d7cb704-78cc-4ad9-9fb2-53e2e9547724","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2020-11-19T10:27:44.4864473+07:00","Properties":{}}
+DEBUG 2020-11-19 10:27:44,500 [25   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 2d7cb704-78cc-4ad9-9fb2-53e2e9547724
+WARN  2020-11-19 10:28:02,732 [25   ] nHandling.AbpApiExceptionFilterAttribute - Method arguments are not valid! See ValidationErrors for details.
+Abp.Runtime.Validation.AbpValidationException: Method arguments are not valid! See ValidationErrors for details.
+   at Abp.Runtime.Validation.Interception.MethodInvocationValidator.ThrowValidationError()
+   at Abp.Runtime.Validation.Interception.MethodInvocationValidator.Validate()
+   at Abp.WebApi.Validation.AbpApiValidationFilter.<ExecuteActionFilterAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.WebApi.Auditing.AbpApiAuditFilter.<ExecuteActionFilterAsync>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.WebApi.Security.AntiForgery.AbpAntiForgeryApiFilter.<ExecuteAuthorizationFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.WebApi.Authorization.AbpApiAuthorizeFilter.<ExecuteAuthorizationFilterAsync>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext()
+WARN  2020-11-19 10:28:02,736 [25   ] nHandling.AbpApiExceptionFilterAttribute - There are 1 validation errors:
+WARN  2020-11-19 10:28:02,736 [25   ] nHandling.AbpApiExceptionFilterAttribute - The topic_name field is required. (input.topic_name)
+DEBUG 2020-11-19 10:28:14,143 [31   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 5d893003-6315-41b6-8536-64b543cdc2ae
+WARN  2020-11-19 10:28:21,396 [25   ] nHandling.AbpApiExceptionFilterAttribute - Method arguments are not valid! See ValidationErrors for details.
+Abp.Runtime.Validation.AbpValidationException: Method arguments are not valid! See ValidationErrors for details.
+   at Abp.Runtime.Validation.Interception.MethodInvocationValidator.ThrowValidationError()
+   at Abp.Runtime.Validation.Interception.MethodInvocationValidator.Validate()
+   at Abp.WebApi.Validation.AbpApiValidationFilter.<ExecuteActionFilterAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.WebApi.Auditing.AbpApiAuditFilter.<ExecuteActionFilterAsync>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.WebApi.Security.AntiForgery.AbpAntiForgeryApiFilter.<ExecuteAuthorizationFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.WebApi.Authorization.AbpApiAuthorizeFilter.<ExecuteAuthorizationFilterAsync>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext()
+WARN  2020-11-19 10:28:21,396 [25   ] nHandling.AbpApiExceptionFilterAttribute - There are 1 validation errors:
+WARN  2020-11-19 10:28:21,396 [25   ] nHandling.AbpApiExceptionFilterAttribute - The topic_name field is required. (input.topic_name)
+WARN  2020-11-19 10:29:43,844 [35   ] nHandling.AbpApiExceptionFilterAttribute - Method arguments are not valid! See ValidationErrors for details.
+Abp.Runtime.Validation.AbpValidationException: Method arguments are not valid! See ValidationErrors for details.
+   at Abp.Runtime.Validation.Interception.MethodInvocationValidator.ThrowValidationError()
+   at Abp.Runtime.Validation.Interception.MethodInvocationValidator.Validate()
+   at Abp.WebApi.Validation.AbpApiValidationFilter.<ExecuteActionFilterAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.WebApi.Auditing.AbpApiAuditFilter.<ExecuteActionFilterAsync>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.WebApi.Security.AntiForgery.AbpAntiForgeryApiFilter.<ExecuteAuthorizationFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.WebApi.Authorization.AbpApiAuthorizeFilter.<ExecuteAuthorizationFilterAsync>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext()
+WARN  2020-11-19 10:29:43,845 [35   ] nHandling.AbpApiExceptionFilterAttribute - There are 1 validation errors:
+WARN  2020-11-19 10:29:43,845 [35   ] nHandling.AbpApiExceptionFilterAttribute - The topic_name field is required. (input.topic_name)
+DEBUG 2020-11-19 10:29:48,939 [29   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"596c3c9e-0cbd-4089-bf1c-95548add47b3","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2020-11-19T10:29:48.9391864+07:00","Properties":{}}
+WARN  2020-11-19 10:29:58,549 [31   ] naries.DictionaryBasedLocalizationSource - Can not find 'MeetingList' in localization source 'BS_Zoom_Demo'!
+DEBUG 2020-11-19 10:29:59,569 [31   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 596c3c9e-0cbd-4089-bf1c-95548add47b3
+DEBUG 2020-11-19 10:30:05,048 [29   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"e9605fda-8327-483e-8856-ef10bd30613e","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2020-11-19T10:30:05.0480218+07:00","Properties":{}}
+DEBUG 2020-11-19 10:30:05,068 [33   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: e9605fda-8327-483e-8856-ef10bd30613e
+DEBUG 2020-11-19 10:30:14,440 [34   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 2d7cb704-78cc-4ad9-9fb2-53e2e9547724
+WARN  2020-11-19 10:30:29,390 [41   ] naries.DictionaryBasedLocalizationSource - Can not find 'MeetingList' in localization source 'BS_Zoom_Demo'!
+DEBUG 2020-11-19 10:30:29,852 [41   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: e9605fda-8327-483e-8856-ef10bd30613e
+DEBUG 2020-11-19 10:30:33,508 [34   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"569377b0-f757-4ca0-93cd-e25a1539ffed","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2020-11-19T10:30:33.5089007+07:00","Properties":{}}
+DEBUG 2020-11-19 10:30:33,531 [25   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 569377b0-f757-4ca0-93cd-e25a1539ffed
+WARN  2020-11-19 10:32:11,998 [25   ] naries.DictionaryBasedLocalizationSource - Can not find 'MeetingList' in localization source 'BS_Zoom_Demo'!
+DEBUG 2020-11-19 10:32:12,396 [43   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 569377b0-f757-4ca0-93cd-e25a1539ffed
+DEBUG 2020-11-19 10:32:19,324 [29   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"724bab48-fd3e-4e84-8651-bde2c8d9273f","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2020-11-19T10:32:19.3248809+07:00","Properties":{}}
+DEBUG 2020-11-19 10:32:19,340 [42   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 724bab48-fd3e-4e84-8651-bde2c8d9273f
+WARN  2020-11-19 10:34:10,562 [48   ] naries.DictionaryBasedLocalizationSource - Can not find 'MeetingList' in localization source 'BS_Zoom_Demo'!
+DEBUG 2020-11-19 10:34:16,014 [54   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"84081582-5c1b-4db4-a602-1ac87ad13f15","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2020-11-19T10:34:16.0138778+07:00","Properties":{}}
+DEBUG 2020-11-19 10:34:16,031 [54   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 84081582-5c1b-4db4-a602-1ac87ad13f15
+DEBUG 2020-11-19 10:34:45,755 [26   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 724bab48-fd3e-4e84-8651-bde2c8d9273f
+WARN  2020-11-19 10:34:53,861 [26   ] nHandling.AbpApiExceptionFilterAttribute - Method arguments are not valid! See ValidationErrors for details.
+Abp.Runtime.Validation.AbpValidationException: Method arguments are not valid! See ValidationErrors for details.
+   at Abp.Runtime.Validation.Interception.MethodInvocationValidator.ThrowValidationError()
+   at Abp.Runtime.Validation.Interception.MethodInvocationValidator.Validate()
+   at Abp.WebApi.Validation.AbpApiValidationFilter.<ExecuteActionFilterAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.WebApi.Auditing.AbpApiAuditFilter.<ExecuteActionFilterAsync>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.WebApi.Security.AntiForgery.AbpAntiForgeryApiFilter.<ExecuteAuthorizationFilterAsync>d__10.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Abp.WebApi.Authorization.AbpApiAuthorizeFilter.<ExecuteAuthorizationFilterAsync>d__7.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__6.MoveNext()
+WARN  2020-11-19 10:34:53,861 [26   ] nHandling.AbpApiExceptionFilterAttribute - There are 1 validation errors:
+WARN  2020-11-19 10:34:53,861 [26   ] nHandling.AbpApiExceptionFilterAttribute - The topic_name field is required. (input.topic_name)
+WARN  2020-11-19 10:35:35,506 [54   ] naries.DictionaryBasedLocalizationSource - Can not find 'MeetingList' in localization source 'BS_Zoom_Demo'!
+DEBUG 2020-11-19 10:35:43,557 [15   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"1aea0da7-810d-4693-b5ff-06515fa49aae","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2020-11-19T10:35:43.5572521+07:00","Properties":{}}
+DEBUG 2020-11-19 10:35:43,569 [54   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 1aea0da7-810d-4693-b5ff-06515fa49aae
+DEBUG 2020-11-19 10:36:11,019 [26   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 84081582-5c1b-4db4-a602-1ac87ad13f15
+WARN  2020-11-19 10:38:17,059 [26   ] naries.DictionaryBasedLocalizationSource - Can not find 'MeetingList' in localization source 'BS_Zoom_Demo'!
+DEBUG 2020-11-19 10:38:22,763 [37   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"76ae4d93-b175-437f-bb1d-881cc94ea545","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2020-11-19T10:38:22.7638612+07:00","Properties":{}}
+DEBUG 2020-11-19 10:38:22,776 [47   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 76ae4d93-b175-437f-bb1d-881cc94ea545
+DEBUG 2020-11-19 10:38:51,454 [37   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 1aea0da7-810d-4693-b5ff-06515fa49aae
+INFO  2020-11-19 10:38:57,981 [25   ] BS_Zoom_Demo.Meetings.MeetingAppService  - Creating a meeting for input: [CreateMeetingInput > AssignedPersonId = , Description = ABC1]
+WARN  2020-11-19 10:39:12,035 [47   ] naries.DictionaryBasedLocalizationSource - Can not find 'MeetingList' in localization source 'BS_Zoom_Demo'!
+DEBUG 2020-11-19 10:39:12,129 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 76ae4d93-b175-437f-bb1d-881cc94ea545
+DEBUG 2020-11-19 10:39:14,266 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"2f823757-a30a-441f-b0e3-938399055240","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2020-11-19T10:39:14.2669572+07:00","Properties":{}}
+DEBUG 2020-11-19 10:39:14,302 [49   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 2f823757-a30a-441f-b0e3-938399055240
+DEBUG 2020-11-19 11:05:56,086 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2020-11-19 11:05:56,107 [1    ] Abp.Modules.AbpModuleManager             - Found 17 ABP modules in total.
+DEBUG 2020-11-19 11:05:56,116 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BS_Zoom_Demo.Web.BS_Zoom_DemoWebModule, BS_Zoom_Demo.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-19 11:05:56,118 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BS_Zoom_Demo.BS_Zoom_DemoDataModule, BS_Zoom_Demo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-19 11:05:56,118 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-19 11:05:56,118 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-19 11:05:56,118 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-19 11:05:56,118 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-19 11:05:56,119 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-19 11:05:56,119 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-19 11:05:56,120 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BS_Zoom_Demo.BS_Zoom_DemoCoreModule, BS_Zoom_Demo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-19 11:05:56,120 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BS_Zoom_Demo.BS_Zoom_DemoApplicationModule, BS_Zoom_Demo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-19 11:05:56,121 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-19 11:05:56,121 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BS_Zoom_Demo.Api.BS_Zoom_DemoWebApiModule, BS_Zoom_Demo.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-19 11:05:56,122 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-19 11:05:56,122 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-19 11:05:56,122 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-19 11:05:56,122 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-19 11:05:56,123 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-19 11:05:56,127 [1    ] Abp.Modules.AbpModuleManager             - 17 modules loaded.
+DEBUG 2020-11-19 11:05:56,474 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-11-19 11:05:56,474 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-11-19 11:05:56,474 [1    ] o.Configuration.LanguageManagementConfig - Converted BS_Zoom_Demo (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-11-19 11:05:56,474 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-11-19 11:05:57,064 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: BS_Zoom_Demo.EntityFramework.BS_Zoom_DemoDbContext, BS_Zoom_Demo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-19 11:06:00,918 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2020-11-19 11:06:01,011 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2020-11-19 11:06:01,096 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2020-11-19 11:06:01,125 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: BS_Zoom_Demo
+DEBUG 2020-11-19 11:06:01,184 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2020-11-19 11:06:01,452 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Castle.Proxies.BackgroundJobManagerProxy
+DEBUG 2020-11-19 11:06:01,526 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 12 classes define auto mapping attributes
+DEBUG 2020-11-19 11:06:01,526 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BS_Zoom_Demo.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2020-11-19 11:06:01,531 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BS_Zoom_Demo.Sessions.Dto.UserLoginInfoDto
+DEBUG 2020-11-19 11:06:01,532 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BS_Zoom_Demo.Users.Dto.CreateUserDto
+DEBUG 2020-11-19 11:06:01,532 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BS_Zoom_Demo.Users.Dto.UpdateUserDto
+DEBUG 2020-11-19 11:06:01,532 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BS_Zoom_Demo.Users.Dto.UserDto
+DEBUG 2020-11-19 11:06:01,532 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BS_Zoom_Demo.Teachers.Dtos.PersonDto
+DEBUG 2020-11-19 11:06:01,532 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BS_Zoom_Demo.Roles.Dto.PermissionDto
+DEBUG 2020-11-19 11:06:01,532 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BS_Zoom_Demo.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2020-11-19 11:06:01,532 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BS_Zoom_Demo.MultiTenancy.Dto.EditTenantDto
+DEBUG 2020-11-19 11:06:01,532 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BS_Zoom_Demo.MultiTenancy.Dto.TenantDto
+DEBUG 2020-11-19 11:06:01,533 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BS_Zoom_Demo.Web.Models.Account.TenantChangeViewModel
+DEBUG 2020-11-19 11:06:01,533 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BS_Zoom_Demo.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2020-11-19 11:06:04,893 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BS_Zoom_Demo.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2020-11-19 11:06:04,894 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BS_Zoom_Demo.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2020-11-19 11:06:04,896 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BS_Zoom_Demo.Teachers.IPersonAppService' with service name 'app/person'.
+DEBUG 2020-11-19 11:06:04,897 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BS_Zoom_Demo.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2020-11-19 11:06:04,898 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BS_Zoom_Demo.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2020-11-19 11:06:04,899 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BS_Zoom_Demo.Meetings.IMeetingAppService' with service name 'app/meeting'.
+DEBUG 2020-11-19 11:06:04,900 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BS_Zoom_Demo.Configuration.IConfigurationAppService' with service name 'app/configuration'.
+DEBUG 2020-11-19 11:06:04,901 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BS_Zoom_Demo.Common.ILookupAppService' with service name 'app/lookup'.
+DEBUG 2020-11-19 11:06:04,902 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BS_Zoom_Demo.Authorization.Accounts.IAccountAppService' with service name 'app/account'.

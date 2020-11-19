@@ -1,12 +1,9 @@
 ﻿(function ($) {
     $(function () {
-        var _$form = $('#MeetingCreateModal');
-
-        _$form.find('input:first').focus();
-
-        _$form.validate();
-
         $('#zmmtg-root').css('display', 'none');
+        var _$form = $('#MeetingCreationForm');
+        _$form.find('input:first').focus();
+        _$form.validate();
 
         document.getElementById("display_name").value =
             "CDN" +
@@ -66,7 +63,7 @@
         });
 
         _$form.find('button[type="submit"]').click(function (e) {
-            e.preventDefault();
+            e.preventDefault();            
 
             if (!_$form.valid()) {
                 return;
@@ -109,14 +106,14 @@
             // ZoomMtg.setZoomJSLib('http://localhost:9999/node_modules/@zoomus/websdk/dist/lib', '/av'); // Local version default, Angular Project change to use cdn version
             ZoomMtg.preLoadWasm(); // pre download wasm file to save time.
 
-            var API_KEY = "vS_E4sK3S7uFEJk6I76Krw";
+            var API_KEY = $('#api_key').val();
 
             /**
              * NEVER PUT YOUR ACTUAL API SECRET IN CLIENT SIDE CODE, THIS IS JUST FOR QUICK PROTOTYPING
              * The below generateSignature should be done server side as not to expose your api secret in public
              * You can find an eaxmple in here: https://marketplace.zoom.us/docs/sdk/native-sdks/web/essential/signature
              */
-            var API_SECRET = "1d5M36uFNCg2zwdhkiJ2bOP1D1Ej67dU8ZKP";
+            var API_SECRET = $('#api_secret').val();
 
             var tmpMn = meetingId.replace(/([^0-9])+/i, "");
             if (tmpMn.match(/([0-9]{9,11})/)) {

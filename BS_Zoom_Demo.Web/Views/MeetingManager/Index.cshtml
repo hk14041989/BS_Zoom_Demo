@@ -15,7 +15,6 @@
         <script src="~/Views/MeetingManager/index.min.js" asp-append-version="true"></script>
     </environment>
 }
-
 <h2>
     @L("MeetingsList")
     <span><a class="btn btn-primary btn-sm" asp-action="Create" id="AddNew">@L("AddNew")</a></span>
@@ -30,7 +29,9 @@
            })
     </span>
 </h2>
-<input type="hidden" name="display_name" id="display_name" value="1.8.1#CDN" maxLength="100" class="form-control">
+<input type="hidden" name="display_name" id="display_name" value="1.8.1#CDN">
+<input type="hidden" name="api_key" id="api_key" value="@Model.apiKey" />
+<input type="hidden" name="api_secret" id="api_secret" value="@Model.apiSecret" />
 
 <div class="row">
     <div>

@@ -20,12 +20,19 @@ namespace BS_Zoom_Demo.Web.Models.Meetings
 
         public List<SelectListItem> Teachers { get; set; }
 
-        public IndexViewModel(IReadOnlyList<MeetingDto> meetings, ILocalizationManager localizationManager, string access_token, List<SelectListItem> teachersSelectListItems)
+        public string apiKey { get; set; }
+
+        public string apiSecret { get; set; }
+
+        public IndexViewModel(IReadOnlyList<MeetingDto> meetings, ILocalizationManager localizationManager, string access_token, 
+            List<SelectListItem> teachersSelectListItems, string api_key, string api_secret)
         {
             Meetings = meetings;
             LocalizationManager = localizationManager;
             accessToken = access_token;
             Teachers = teachersSelectListItems;
+            apiKey = api_key;
+            apiSecret = api_secret;
         }
 
         public string GetMeetingLabel(MeetingDto meeting)

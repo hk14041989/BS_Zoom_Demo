@@ -2,6 +2,7 @@
 using Abp.Application.Services.Dto;
 using Abp.Domain.Repositories;
 using AutoMapper;
+using BS_Zoom_Demo.Common;
 using BS_Zoom_Demo.Meetings.Dtos;
 using BS_Zoom_Demo.Teachers;
 using Newtonsoft.Json.Linq;
@@ -20,8 +21,7 @@ namespace BS_Zoom_Demo.Meetings
 
         private readonly IMeetingRepository _meetingRepository;
         private readonly IRepository<Person> _personRepository;
-        private readonly IMapper _mapper;
-        private readonly string userId = "ifusezvfS5mT-u2MhPoa1g";
+        private readonly IMapper _mapper;        
         private static readonly HttpClient client = new HttpClient();
 
         /// <summary>
@@ -75,31 +75,99 @@ namespace BS_Zoom_Demo.Meetings
             Logger.Info("Updating a meeting for input: " + input);
 
             //Retrieving a meeting entity with given id using standard Get method of repositories.
-            var task = _meetingRepository.Get(input.MeetingId);
+            var meeting = _meetingRepository.Get(input.MeetingId);
+
+            var client = new RestClient("https://api.zoom.us/v2/meetings/" + meeting.MeetingId);
+            var request = new RestRequest(Method.PATCH);
+            request.AddHeader("content-type", "application/json");
+            request.AddHeader("authorization", "Bearer " + meeting.AccessToken);
+            request.AddParameter("application/json", "", ParameterType.RequestBody);
+
+            string PostData = new JavaScriptSerializer().Serialize(new
+            {
+                topic = meeting.TopicName,
+                type = 2,
+                meeting.StartTime,
+                meeting.Duration,
+                schedule_for = "",
+                timezone = "Asia/Saigon",
+                meeting.MeetingPass,
+                meeting.Description,
+                recurrence = new
+                {
+                    type = 1,
+                    repeat_interval = 1,
+                    weekly_days = 1,
+                    monthly_day = 1,
+                    monthly_week = 1,
+                    monthly_week_day = 1,
+                    end_times = 1,
+                    meeting.EndTime,
+
+                },
+                setting = new
+                {
+                    host_video = false,
+                    participant_video = false,
+                    cn_meeting = false,
+                    in_meeting = false,
+                    join_before_host = true,
+                    mute_upon_entry = false,
+                    watermark = false,
+                    usePmi = false,
+                    approval_type = 2,
+                    registration_type = 1,
+                    audio = "both",
+                    auto_recording = "none",
+                    enforce_login = "",
+                    enforce_login_domains = "",
+                    alternative_hosts = "",
+                    global_dial_in_countries = new string[]
+                {
+                        "",
+                },
+                    registrants_email_notification = false
+                },
+            });
+
+            request.AddParameter("application/json", PostData, ParameterType.RequestBody);
+            IRestResponse response = client.Execute(request);
+
+            if (response.StatusCode == HttpStatusCode.Unauthorized)
+            {
+                var zoomToken = new ZoomToken(Const.apiKey, Const.apiSecret);
+                string newJWTToken = zoomToken.Token;
+                request = new RestRequest(Method.GET);
+                request.AddHeader("authorization", "Bearer " + newJWTToken);
+                request.AddParameter("application/json", "", ParameterType.RequestBody);
+
+                request.AddParameter("application/json", PostData, ParameterType.RequestBody);
+                response = client.Execute(request);
+            }
 
             //Updating changed properties of the retrieved meeting entity.
             if (input.State.HasValue)
-                task.State = input.State.Value;
+                meeting.State = input.State.Value;
 
             if (input.AssignedPersonId.HasValue)
-                task.AssignedPerson = _personRepository.Load(input.AssignedPersonId.Value);
+                meeting.AssignedPerson = _personRepository.Load(input.AssignedPersonId.Value);
 
             if (!string.IsNullOrEmpty(input.topic_name))
-                task.TopicName = input.topic_name;
+                meeting.TopicName = input.topic_name;
 
             if (!string.IsNullOrEmpty(meetingPass))
-                task.MeetingPass = meetingPass;
+                meeting.MeetingPass = meetingPass;
 
             if (!string.IsNullOrEmpty(input.start_time))
-                task.StartTime = DateTime.Parse(input.start_time);
+                meeting.StartTime = DateTime.Parse(input.start_time);
 
             if (!string.IsNullOrEmpty(input.end_date_time))
-                task.EndTime = DateTime.Parse(input.end_date_time);
+                meeting.EndTime = DateTime.Parse(input.end_date_time);
 
             if (!string.IsNullOrEmpty(input.agenda))
-                task.Description = input.agenda;
+                meeting.Description = input.agenda;
 
-            task.Duration = input.duration;
+            meeting.Duration = input.duration;
 
             //We even do not call Update method of the repository.
             //Because an application service method is a 'unit of work' scope as default.
@@ -122,11 +190,9 @@ namespace BS_Zoom_Demo.Meetings
             };
 
             if (input.AssignedPersonId.HasValue)
-            {
                 meeting.AssignedPersonId = input.AssignedPersonId.Value;
-            }
 
-            var client = new RestClient("https://api.zoom.us/v2/users/" + userId + "/meetings");
+            var client = new RestClient("https://api.zoom.us/v2/users/" + Const.userId + "/meetings");
             var request = new RestRequest(Method.POST);
             request.AddHeader("content-type", "application/json");
             request.AddHeader("authorization", "Bearer " + accessToken);
@@ -181,6 +247,18 @@ namespace BS_Zoom_Demo.Meetings
             request.AddParameter("application/json", PostData, ParameterType.RequestBody);
             IRestResponse response = client.Execute(request);
 
+            if (response.StatusCode == HttpStatusCode.Unauthorized)
+            {
+                var zoomToken = new ZoomToken(Const.apiKey, Const.apiSecret);
+                string newJWTToken = zoomToken.Token;
+                accessToken = newJWTToken;
+                request = new RestRequest(Method.POST);
+                request.AddHeader("authorization", "Bearer " + accessToken);
+                request.AddParameter("application/json", "", ParameterType.RequestBody);
+
+                response = client.Execute(request);
+            }
+
             if (response.StatusCode == HttpStatusCode.Created)
             {
                 dynamic data = JObject.Parse(response.Content);
@@ -191,13 +269,36 @@ namespace BS_Zoom_Demo.Meetings
 
                 //Saving entity with standard Insert method of repositories.
                 _meetingRepository.Insert(meeting);
-            }           
+            }                         
         }
 
         public void Delete(EntityDto<long> input)
         {
             var meeting = _meetingRepository.GetMeetingById(input.Id);
-            _meetingRepository.Delete(meeting);
+
+            //Delete meeting in zoom server
+            var client = new RestClient("https://api.zoom.us/v2/meetings/" + meeting.MeetingId);
+            var request = new RestRequest(Method.DELETE);
+            request.AddHeader("content-type", "application/json");
+            request.AddHeader("authorization", "Bearer " + meeting.AccessToken);
+            request.AddParameter("application/json", "", ParameterType.RequestBody);
+
+            IRestResponse response = client.Execute(request);
+
+            if (response.StatusCode == HttpStatusCode.Unauthorized)
+            {
+                var zoomToken = new ZoomToken(Const.apiKey, Const.apiSecret);
+                string newJWTToken = zoomToken.Token;
+                string accessToken = newJWTToken;
+                request = new RestRequest(Method.DELETE);
+                request.AddHeader("authorization", "Bearer " + accessToken);
+                request.AddParameter("application/json", "", ParameterType.RequestBody);
+
+                response = client.Execute(request);                
+            }
+              
+            if (response.StatusCode == HttpStatusCode.OK)
+                _meetingRepository.Delete(meeting);
         }        
 
         public string GetMeetingInfor(long meetingId, string accessToken)
@@ -216,7 +317,9 @@ namespace BS_Zoom_Demo.Meetings
 
                 if (response.StatusCode == HttpStatusCode.Unauthorized)
                 {
-                    accessToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOm51bGwsImlzcyI6InZTX0U0c0szUzd1RkVKazZJNzZLcnciLCJleHAiOjE2MDU3NTg4MTcsImlhdCI6MTYwNTc1MzQxOH0.bYkymeHzYKo6nQGV2LilCKOtbCCjhrplDLmIyw1HtQ8";
+                    var zoomToken = new ZoomToken(Const.apiKey, Const.apiSecret);
+                    string newJWTToken = zoomToken.Token;
+                    accessToken = newJWTToken;
                     request = new RestRequest(Method.GET);
                     request.AddHeader("authorization", "Bearer " + accessToken);
                     request.AddParameter("application/json", "", ParameterType.RequestBody);
@@ -231,20 +334,6 @@ namespace BS_Zoom_Demo.Meetings
             catch (Exception)
             {
                 return "";
-            }
-        }
-
-        public bool UpdateMeetingInfor(long meetingId, string accessToken)
-        {
-            try
-            {
-
-
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
             }
         }
     }

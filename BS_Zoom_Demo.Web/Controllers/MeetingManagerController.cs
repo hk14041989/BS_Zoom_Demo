@@ -8,7 +8,6 @@ using BS_Zoom_Demo.Web.Models.Meetings;
 using BS_Zoom_Demo.Web.Models.Teachers;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Web.Mvc;
 
 namespace BS_Zoom_Demo.Web.Controllers
@@ -18,8 +17,7 @@ namespace BS_Zoom_Demo.Web.Controllers
     {
         private readonly IMeetingAppService _meetingAppService;
         private readonly IMeetingRepository _meetingRepository;
-        private readonly ILookupAppService _lookupAppService;
-        private readonly string JWTToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOm51bGwsImlzcyI6InZTX0U0c0szUzd1RkVKazZJNzZLcnciLCJleHAiOjE2MDYzNTUwNjUsImlhdCI6MTYwNTc1MDI2Nn0.RR1O3f-TCmnqdC9M9s1iKgEybQCdsW-QORn3zDI2dis";
+        private readonly ILookupAppService _lookupAppService;        
         public List<SelectListItem> teachersSelectListItems = new List<SelectListItem>();
 
         public MeetingManagerController(
@@ -33,6 +31,9 @@ namespace BS_Zoom_Demo.Web.Controllers
         // GET: MeetingManager
         public ActionResult Index(GetMeetingsInput input)
         {
+            var zoomToken = new ZoomToken(Const.apiKey, Const.apiSecret);
+            Const.JWTToken = zoomToken.Token;
+
             var output = _meetingAppService.GetMeetings(input);
 
             teachersSelectListItems = _lookupAppService.GetTeachersComboboxItems().Items
@@ -41,7 +42,7 @@ namespace BS_Zoom_Demo.Web.Controllers
 
             teachersSelectListItems.Insert(0, new SelectListItem { Value = string.Empty, Text = L("Unassigned"), Selected = true });
 
-            var model = new IndexViewModel(output.Meetings, LocalizationManager, JWTToken, teachersSelectListItems)
+            var model = new IndexViewModel(output.Meetings, LocalizationManager, Const.JWTToken, teachersSelectListItems, Const.apiKey, Const.apiSecret)
             {
                 SelectedMeetingState = input.State
             };
@@ -57,7 +58,7 @@ namespace BS_Zoom_Demo.Web.Controllers
 
             teachersSelectListItems.Insert(0, new SelectListItem { Value = string.Empty, Text = L("Unassigned"), Selected = true });
 
-            return View(new CreateMeetingViewModel(teachersSelectListItems, JWTToken));
+            return View(new CreateMeetingViewModel(teachersSelectListItems, Const.JWTToken));
         }
 
         public ActionResult EditMeetingModal(long meetingId)
@@ -104,13 +105,6 @@ namespace BS_Zoom_Demo.Web.Controllers
             string content = _meetingAppService.GetMeetingInfor(meetingId, accessToken);
 
             return OK(new { content });
-        }
-
-        public ActionResult UpdateMeetingInfor(long meetingId, string accessToken)
-        {
-            var result = _meetingAppService.UpdateMeetingInfor(meetingId, accessToken);
-
-            return OK(new { result });
         }
     }
 }

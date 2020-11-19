@@ -16,7 +16,5 @@ namespace BS_Zoom_Demo.Meetings
         void Delete(EntityDto<long> input);
 
         string GetMeetingInfor(long meetingId, string accessToken);
-
-        bool UpdateMeetingInfor(long meetingId, string accessToken);
     }
 }

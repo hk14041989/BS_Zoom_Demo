@@ -1,12 +1,9 @@
 ﻿using Microsoft.IdentityModel.Tokens;
 using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Text;
-using System.Web;
 
-namespace BS_Zoom_Demo.Web.Common
+namespace BS_Zoom_Demo.Common
 {
     public class ZoomToken
     {
