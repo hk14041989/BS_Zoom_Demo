@@ -289,9 +289,8 @@ namespace BS_Zoom_Demo.Meetings
             {
                 var zoomToken = new ZoomToken(Const.apiKey, Const.apiSecret);
                 string newJWTToken = zoomToken.Token;
-                string accessToken = newJWTToken;
                 request = new RestRequest(Method.DELETE);
-                request.AddHeader("authorization", "Bearer " + accessToken);
+                request.AddHeader("authorization", "Bearer " + newJWTToken);
                 request.AddParameter("application/json", "", ParameterType.RequestBody);
 
                 response = client.Execute(request);                
@@ -318,9 +317,8 @@ namespace BS_Zoom_Demo.Meetings
                 {
                     var zoomToken = new ZoomToken(Const.apiKey, Const.apiSecret);
                     string newJWTToken = zoomToken.Token;
-                    accessToken = newJWTToken;
                     request = new RestRequest(Method.GET);
-                    request.AddHeader("authorization", "Bearer " + accessToken);
+                    request.AddHeader("authorization", "Bearer " + newJWTToken);
                     request.AddParameter("application/json", "", ParameterType.RequestBody);
 
                     response = client.Execute(request);

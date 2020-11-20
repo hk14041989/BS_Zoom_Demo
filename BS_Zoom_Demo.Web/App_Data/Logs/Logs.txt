@@ -5334,3 +5334,23 @@ WARN  2020-11-19 11:23:57,893 [15   ] naries.DictionaryBasedLocalizationSource -
 DEBUG 2020-11-19 11:23:59,033 [15   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"18154891-09b5-4f4a-8d48-b9497c648094","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2020-11-19T11:23:59.0339676+07:00","Properties":{}}
 DEBUG 2020-11-19 11:23:59,046 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 18154891-09b5-4f4a-8d48-b9497c648094
 DEBUG 2020-11-19 11:24:37,448 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: f250d89f-bdf2-4f1e-a164-efcf8cc43739
+INFO  2020-11-19 11:43:35,698 [28   ] BS_Zoom_Demo.Meetings.MeetingAppService  - Creating a meeting for input: [CreateMeetingInput > AssignedPersonId = , Description = ABC]
+WARN  2020-11-19 11:43:37,619 [8    ] naries.DictionaryBasedLocalizationSource - Can not find 'MeetingList' in localization source 'BS_Zoom_Demo'!
+DEBUG 2020-11-19 11:43:38,115 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 18154891-09b5-4f4a-8d48-b9497c648094
+DEBUG 2020-11-19 11:43:38,784 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"c8157f63-0dc2-4006-84a8-3e22918c0ba7","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2020-11-19T11:43:38.7844064+07:00","Properties":{}}
+DEBUG 2020-11-19 11:43:38,791 [8    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: c8157f63-0dc2-4006-84a8-3e22918c0ba7
+WARN  2020-11-19 11:43:42,490 [5    ] naries.DictionaryBasedLocalizationSource - Can not find 'MeetingList' in localization source 'BS_Zoom_Demo'!
+DEBUG 2020-11-19 11:43:42,727 [32   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: c8157f63-0dc2-4006-84a8-3e22918c0ba7
+DEBUG 2020-11-19 11:43:43,445 [28   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"0a5e3091-9fd8-4c03-a909-5b3ba1542e65","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2020-11-19T11:43:43.4456721+07:00","Properties":{}}
+DEBUG 2020-11-19 11:43:43,467 [28   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 0a5e3091-9fd8-4c03-a909-5b3ba1542e65
+INFO  2020-11-19 11:44:26,699 [8    ] BS_Zoom_Demo.Meetings.MeetingAppService  - Creating a meeting for input: [CreateMeetingInput > AssignedPersonId = , Description = ABC]
+WARN  2020-11-19 11:44:42,046 [28   ] naries.DictionaryBasedLocalizationSource - Can not find 'MeetingList' in localization source 'BS_Zoom_Demo'!
+DEBUG 2020-11-19 11:44:43,203 [28   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 0a5e3091-9fd8-4c03-a909-5b3ba1542e65
+DEBUG 2020-11-19 11:44:44,026 [28   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"5cd06c30-45f2-41a3-995b-4674ca7442cd","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2020-11-19T11:44:44.026389+07:00","Properties":{}}
+DEBUG 2020-11-19 11:44:44,038 [33   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 5cd06c30-45f2-41a3-995b-4674ca7442cd
+WARN  2020-11-19 11:57:03,169 [5    ] naries.DictionaryBasedLocalizationSource - Can not find 'MeetingList' in localization source 'BS_Zoom_Demo'!
+DEBUG 2020-11-19 11:57:03,770 [13   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 5cd06c30-45f2-41a3-995b-4674ca7442cd
+DEBUG 2020-11-19 11:57:04,854 [25   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"74d4553f-d928-4dbc-836e-d0818125994a","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2020-11-19T11:57:04.8542605+07:00","Properties":{}}
+DEBUG 2020-11-19 11:57:04,883 [28   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 74d4553f-d928-4dbc-836e-d0818125994a
+DEBUG 2020-11-19 12:34:05,304 [30   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 74d4553f-d928-4dbc-836e-d0818125994a
+DEBUG 2020-11-19 12:34:10,795 [26   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"21567de2-6774-4106-a322-5a47869ac2a5","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2020-11-19T12:34:10.7959555+07:00","Properties":{}}
