@@ -11,7 +11,6 @@ using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
-using System.Threading.Tasks;
 using System.Web.Script.Serialization;
 
 namespace BS_Zoom_Demo.Meetings
@@ -132,17 +131,23 @@ namespace BS_Zoom_Demo.Meetings
 
             if (response.StatusCode == HttpStatusCode.Unauthorized)
             {
-                var zoomToken = new ZoomToken(Const.apiKey, Const.apiSecret);
-                string newJWTToken = zoomToken.Token;
-                request = new RestRequest(Method.GET);
-                request.AddHeader("authorization", "Bearer " + newJWTToken);
-                request.AddParameter("application/json", "", ParameterType.RequestBody);
+                dynamic data = JObject.Parse(response.Content);
 
-                request.AddParameter("application/json", PostData, ParameterType.RequestBody);
-                response = client.Execute(request);
+                //Token is expried
+                if (data.code == 124)
+                {
+                    var zoomToken = new ZoomToken(Const.apiKey, Const.apiSecret);
+                    string newJWTToken = zoomToken.Token;
+                    request = new RestRequest(Method.GET);
+                    request.AddHeader("authorization", "Bearer " + newJWTToken);
+                    request.AddParameter("application/json", "", ParameterType.RequestBody);
+
+                    request.AddParameter("application/json", PostData, ParameterType.RequestBody);
+                    response = client.Execute(request);
+                }                
             }
 
-            if (response.StatusCode == HttpStatusCode.NoContent)
+            if (response.StatusCode == HttpStatusCode.OK)
             {
                 //Updating changed properties of the retrieved meeting entity.
                 if (input.State.HasValue)
@@ -249,14 +254,20 @@ namespace BS_Zoom_Demo.Meetings
 
             if (response.StatusCode == HttpStatusCode.Unauthorized)
             {
-                var zoomToken = new ZoomToken(Const.apiKey, Const.apiSecret);
-                string newJWTToken = zoomToken.Token;
-                accessToken = newJWTToken;
-                request = new RestRequest(Method.POST);
-                request.AddHeader("authorization", "Bearer " + accessToken);
-                request.AddParameter("application/json", PostData, ParameterType.RequestBody);
+                dynamic data = JObject.Parse(response.Content);
 
-                response = client.Execute(request);
+                //Token is expried
+                if (data.code == 124)
+                {
+                    var zoomToken = new ZoomToken(Const.apiKey, Const.apiSecret);
+                    string newJWTToken = zoomToken.Token;
+                    accessToken = newJWTToken;
+                    request = new RestRequest(Method.POST);
+                    request.AddHeader("authorization", "Bearer " + accessToken);
+                    request.AddParameter("application/json", PostData, ParameterType.RequestBody);
+
+                    response = client.Execute(request);
+                }
             }
 
             if (response.StatusCode == HttpStatusCode.Created)
@@ -287,16 +298,22 @@ namespace BS_Zoom_Demo.Meetings
 
             if (response.StatusCode == HttpStatusCode.Unauthorized)
             {
-                var zoomToken = new ZoomToken(Const.apiKey, Const.apiSecret);
-                string newJWTToken = zoomToken.Token;
-                request = new RestRequest(Method.DELETE);
-                request.AddHeader("authorization", "Bearer " + newJWTToken);
-                request.AddParameter("application/json", "", ParameterType.RequestBody);
+                dynamic data = JObject.Parse(response.Content);
 
-                response = client.Execute(request);                
+                //Token is expried
+                if (data.code == 124)
+                {
+                    var zoomToken = new ZoomToken(Const.apiKey, Const.apiSecret);
+                    string newJWTToken = zoomToken.Token;
+                    request = new RestRequest(Method.DELETE);
+                    request.AddHeader("authorization", "Bearer " + newJWTToken);
+                    request.AddParameter("application/json", "", ParameterType.RequestBody);
+
+                    response = client.Execute(request);
+                }
             }
                        
-            if (response.StatusCode == HttpStatusCode.NoContent)
+            if (response.StatusCode == HttpStatusCode.OK)
                 _meetingRepository.Delete(meeting);
         }        
 
@@ -316,13 +333,19 @@ namespace BS_Zoom_Demo.Meetings
 
                 if (response.StatusCode == HttpStatusCode.Unauthorized)
                 {
-                    var zoomToken = new ZoomToken(Const.apiKey, Const.apiSecret);
-                    string newJWTToken = zoomToken.Token;
-                    request = new RestRequest(Method.GET);
-                    request.AddHeader("authorization", "Bearer " + newJWTToken);
-                    request.AddParameter("application/json", "", ParameterType.RequestBody);
+                    dynamic data = JObject.Parse(response.Content);
 
-                    response = client.Execute(request);
+                    //Token is expried
+                    if (data.code == 124)
+                    {
+                        var zoomToken = new ZoomToken(Const.apiKey, Const.apiSecret);
+                        string newJWTToken = zoomToken.Token;
+                        request = new RestRequest(Method.GET);
+                        request.AddHeader("authorization", "Bearer " + newJWTToken);
+                        request.AddParameter("application/json", "", ParameterType.RequestBody);
+
+                        response = client.Execute(request);
+                    }                    
                 }
 
                 if (response.StatusCode == HttpStatusCode.OK)
@@ -359,12 +382,18 @@ namespace BS_Zoom_Demo.Meetings
 
                 if (response.StatusCode == HttpStatusCode.Unauthorized)
                 {
-                    newJWTToken = zoomToken.Token;
-                    request = new RestRequest(Method.GET);
-                    request.AddHeader("authorization", "Bearer " + newJWTToken);
-                    request.AddParameter("application/json", "", ParameterType.RequestBody);
+                    dynamic data = JObject.Parse(response.Content);
 
-                    response = client.Execute(request);
+                    //Token is expried
+                    if (data.code == 124)
+                    {
+                        newJWTToken = zoomToken.Token;
+                        request = new RestRequest(Method.GET);
+                        request.AddHeader("authorization", "Bearer " + newJWTToken);
+                        request.AddParameter("application/json", "", ParameterType.RequestBody);
+
+                        response = client.Execute(request);
+                    }
                 }
 
                 if (response.StatusCode == HttpStatusCode.OK)

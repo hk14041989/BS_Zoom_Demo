@@ -88,7 +88,12 @@ namespace BS_Zoom_Demo.Web.Controllers
                 .Select(p => p.ToSelectListItem())
                 .ToList();
 
-            teachersSelectListItems.Insert(0, new SelectListItem { Value = string.Empty, Text = L("Unassigned"), Selected = true });
+            teachersSelectListItems.Insert(0, new SelectListItem { Value = string.Empty, Text = L("Unassigned"), Selected = false });
+
+            if (meet.AssignedPerson == null)
+                teachersSelectListItems[0].Selected = true;
+            else             
+                teachersSelectListItems.Find(x => x.Value == model.Meet.AssignedPersonId.ToString()).Selected = true;
 
             model.Teachers = teachersSelectListItems;
 
