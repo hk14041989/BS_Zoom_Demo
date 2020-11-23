@@ -5354,3 +5354,88 @@ DEBUG 2020-11-19 11:57:04,854 [25   ] Abp.Web.SignalR.Hubs.AbpCommonHub        -
 DEBUG 2020-11-19 11:57:04,883 [28   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 74d4553f-d928-4dbc-836e-d0818125994a
 DEBUG 2020-11-19 12:34:05,304 [30   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 74d4553f-d928-4dbc-836e-d0818125994a
 DEBUG 2020-11-19 12:34:10,795 [26   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"21567de2-6774-4106-a322-5a47869ac2a5","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2020-11-19T12:34:10.7959555+07:00","Properties":{}}
+DEBUG 2020-11-20 10:42:37,147 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2020-11-20 10:42:37,168 [1    ] Abp.Modules.AbpModuleManager             - Found 17 ABP modules in total.
+DEBUG 2020-11-20 10:42:37,177 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BS_Zoom_Demo.Web.BS_Zoom_DemoWebModule, BS_Zoom_Demo.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-20 10:42:37,179 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BS_Zoom_Demo.BS_Zoom_DemoDataModule, BS_Zoom_Demo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-20 10:42:37,179 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFramework.AbpZeroEntityFrameworkModule, Abp.Zero.EntityFramework, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-20 10:42:37,179 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.Zero, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-20 10:42:37,181 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-20 10:42:37,181 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-20 10:42:37,182 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkModule, Abp.EntityFramework, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-20 10:42:37,183 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-20 10:42:37,183 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BS_Zoom_Demo.BS_Zoom_DemoCoreModule, BS_Zoom_Demo.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-20 10:42:37,184 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BS_Zoom_Demo.BS_Zoom_DemoApplicationModule, BS_Zoom_Demo.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-20 10:42:37,184 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-20 10:42:37,185 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: BS_Zoom_Demo.Api.BS_Zoom_DemoWebApiModule, BS_Zoom_Demo.WebApi, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-20 10:42:37,185 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.WebApi.AbpWebApiModule, Abp.Web.Api, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-20 10:42:37,185 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebModule, Abp.Web, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-20 10:42:37,185 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-20 10:42:37,185 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.SignalR.AbpWebSignalRModule, Abp.Web.SignalR, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-20 10:42:37,185 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.Mvc.AbpWebMvcModule, Abp.Web.Mvc, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-20 10:42:37,190 [1    ] Abp.Modules.AbpModuleManager             - 17 modules loaded.
+DEBUG 2020-11-20 10:42:37,547 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-11-20 10:42:37,547 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-11-20 10:42:37,547 [1    ] o.Configuration.LanguageManagementConfig - Converted BS_Zoom_Demo (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-11-20 10:42:37,547 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-11-20 10:42:38,069 [1    ] EntityFramework.AbpEntityFrameworkModule - Registering DbContext: BS_Zoom_Demo.EntityFramework.BS_Zoom_DemoDbContext, BS_Zoom_Demo.EntityFramework, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-20 10:42:41,460 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2020-11-20 10:42:41,563 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2020-11-20 10:42:41,620 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2020-11-20 10:42:41,665 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: BS_Zoom_Demo
+DEBUG 2020-11-20 10:42:41,692 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2020-11-20 10:42:41,921 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Castle.Proxies.BackgroundJobManagerProxy
+DEBUG 2020-11-20 10:42:42,013 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 12 classes define auto mapping attributes
+DEBUG 2020-11-20 10:42:42,013 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BS_Zoom_Demo.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2020-11-20 10:42:42,026 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BS_Zoom_Demo.Sessions.Dto.UserLoginInfoDto
+DEBUG 2020-11-20 10:42:42,026 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BS_Zoom_Demo.Users.Dto.CreateUserDto
+DEBUG 2020-11-20 10:42:42,027 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BS_Zoom_Demo.Users.Dto.UpdateUserDto
+DEBUG 2020-11-20 10:42:42,027 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BS_Zoom_Demo.Users.Dto.UserDto
+DEBUG 2020-11-20 10:42:42,027 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BS_Zoom_Demo.Teachers.Dtos.PersonDto
+DEBUG 2020-11-20 10:42:42,027 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BS_Zoom_Demo.Roles.Dto.PermissionDto
+DEBUG 2020-11-20 10:42:42,027 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BS_Zoom_Demo.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2020-11-20 10:42:42,027 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BS_Zoom_Demo.MultiTenancy.Dto.EditTenantDto
+DEBUG 2020-11-20 10:42:42,027 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BS_Zoom_Demo.MultiTenancy.Dto.TenantDto
+DEBUG 2020-11-20 10:42:42,027 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BS_Zoom_Demo.Web.Models.Account.TenantChangeViewModel
+DEBUG 2020-11-20 10:42:42,028 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - BS_Zoom_Demo.Web.Models.Account.TenantSelectionViewModel+TenantInfo
+DEBUG 2020-11-20 10:42:45,086 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BS_Zoom_Demo.Sessions.ISessionAppService' with service name 'app/session'.
+DEBUG 2020-11-20 10:42:45,089 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BS_Zoom_Demo.Users.IUserAppService' with service name 'app/user'.
+DEBUG 2020-11-20 10:42:45,090 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BS_Zoom_Demo.Teachers.IPersonAppService' with service name 'app/person'.
+DEBUG 2020-11-20 10:42:45,091 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BS_Zoom_Demo.Roles.IRoleAppService' with service name 'app/role'.
+DEBUG 2020-11-20 10:42:45,092 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BS_Zoom_Demo.MultiTenancy.ITenantAppService' with service name 'app/tenant'.
+DEBUG 2020-11-20 10:42:45,093 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BS_Zoom_Demo.Meetings.IMeetingAppService' with service name 'app/meeting'.
+DEBUG 2020-11-20 10:42:45,094 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BS_Zoom_Demo.Configuration.IConfigurationAppService' with service name 'app/configuration'.
+DEBUG 2020-11-20 10:42:45,096 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BS_Zoom_Demo.Common.ILookupAppService' with service name 'app/lookup'.
+DEBUG 2020-11-20 10:42:45,097 [1    ] Abp.Logging.LogHelper                    - Dynamic web api controller is created for type 'BS_Zoom_Demo.Authorization.Accounts.IAccountAppService' with service name 'app/account'.
+DEBUG 2020-11-20 10:43:06,336 [5    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"eadc343c-ce53-4147-a3d4-0853f77776ac","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2020-11-20T10:43:06.3294118+07:00","Properties":{}}
+DEBUG 2020-11-20 10:43:06,381 [5    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: eadc343c-ce53-4147-a3d4-0853f77776ac
+WARN  2020-11-20 10:43:10,181 [8    ] naries.DictionaryBasedLocalizationSource - Can not find 'MeetingList' in localization source 'BS_Zoom_Demo'!
+DEBUG 2020-11-20 10:43:10,473 [17   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: eadc343c-ce53-4147-a3d4-0853f77776ac
+DEBUG 2020-11-20 10:43:13,196 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"27a9484e-ee90-4cfb-94cd-4e63cc96991c","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2020-11-20T10:43:13.1961504+07:00","Properties":{}}
+DEBUG 2020-11-20 10:43:13,202 [16   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 27a9484e-ee90-4cfb-94cd-4e63cc96991c
+WARN  2020-11-20 10:44:33,864 [6    ] naries.DictionaryBasedLocalizationSource - Can not find 'MeetingList' in localization source 'BS_Zoom_Demo'!
+DEBUG 2020-11-20 10:44:35,132 [20   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"adecbc6e-296b-4dd1-980c-fe3bfe806ec8","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2020-11-20T10:44:35.1326345+07:00","Properties":{}}
+DEBUG 2020-11-20 10:44:35,140 [20   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: adecbc6e-296b-4dd1-980c-fe3bfe806ec8
+WARN  2020-11-20 10:44:38,180 [20   ] naries.DictionaryBasedLocalizationSource - Can not find 'MeetingList' in localization source 'BS_Zoom_Demo'!
+DEBUG 2020-11-20 10:44:38,998 [6    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"9d7f68c1-f49f-4ecf-b173-4f005c4d2803","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2020-11-20T10:44:38.9988781+07:00","Properties":{}}
+DEBUG 2020-11-20 10:44:39,004 [5    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 9d7f68c1-f49f-4ecf-b173-4f005c4d2803
+DEBUG 2020-11-20 10:45:06,423 [5    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 27a9484e-ee90-4cfb-94cd-4e63cc96991c
+DEBUG 2020-11-20 10:45:11,438 [28   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: adecbc6e-296b-4dd1-980c-fe3bfe806ec8
+WARN  2020-11-20 10:46:52,420 [30   ] naries.DictionaryBasedLocalizationSource - Can not find 'MeetingList' in localization source 'BS_Zoom_Demo'!
+DEBUG 2020-11-20 10:46:53,329 [33   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"41e793f2-a440-4473-a656-b1aadfa11e7a","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2020-11-20T10:46:53.3290074+07:00","Properties":{}}
+DEBUG 2020-11-20 10:46:53,335 [30   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 41e793f2-a440-4473-a656-b1aadfa11e7a
+WARN  2020-11-20 10:46:55,542 [33   ] naries.DictionaryBasedLocalizationSource - Can not find 'MeetingList' in localization source 'BS_Zoom_Demo'!
+DEBUG 2020-11-20 10:46:56,967 [23   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 41e793f2-a440-4473-a656-b1aadfa11e7a
+DEBUG 2020-11-20 10:46:57,019 [25   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"396b16a2-f169-4c45-a2c6-113c1cc9dbd1","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2020-11-20T10:46:57.0193028+07:00","Properties":{}}
+DEBUG 2020-11-20 10:46:57,034 [26   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 396b16a2-f169-4c45-a2c6-113c1cc9dbd1
+WARN  2020-11-20 10:46:59,227 [28   ] naries.DictionaryBasedLocalizationSource - Can not find 'MeetingList' in localization source 'BS_Zoom_Demo'!
+DEBUG 2020-11-20 10:46:59,515 [25   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: 396b16a2-f169-4c45-a2c6-113c1cc9dbd1
+DEBUG 2020-11-20 10:47:00,375 [22   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"ada74818-663c-443d-810b-671e42acec4e","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2020-11-20T10:47:00.3759958+07:00","Properties":{}}
+DEBUG 2020-11-20 10:47:00,381 [22   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: ada74818-663c-443d-810b-671e42acec4e
+WARN  2020-11-20 10:47:02,174 [22   ] naries.DictionaryBasedLocalizationSource - Can not find 'MeetingList' in localization source 'BS_Zoom_Demo'!
+DEBUG 2020-11-20 10:47:02,952 [28   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"448df661-db85-4a14-b641-e5b7b644414c","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2020-11-20T10:47:02.9521205+07:00","Properties":{}}
+DEBUG 2020-11-20 10:47:02,961 [22   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: 448df661-db85-4a14-b641-e5b7b644414c
+WARN  2020-11-20 10:47:04,578 [33   ] naries.DictionaryBasedLocalizationSource - Can not find 'MeetingList' in localization source 'BS_Zoom_Demo'!
+DEBUG 2020-11-20 10:47:05,379 [26   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is connected: {"ConnectionId":"b49be3ee-a754-4468-89ce-32a7b731d08f","IpAddress":"::1","TenantId":null,"UserId":1,"ConnectTime":"2020-11-20T10:47:05.3798199+07:00","Properties":{}}
+DEBUG 2020-11-20 10:47:05,386 [31   ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is registered: b49be3ee-a754-4468-89ce-32a7b731d08f
+DEBUG 2020-11-20 10:47:07,349 [5    ] Abp.Web.SignalR.Hubs.AbpCommonHub        - A client is disconnected: b49be3ee-a754-4468-89ce-32a7b731d08f

@@ -103,7 +103,6 @@ namespace BS_Zoom_Demo.Meetings
                     monthly_week_day = 1,
                     end_times = 1,
                     meeting.EndTime,
-
                 },
                 setting = new
                 {
@@ -122,10 +121,7 @@ namespace BS_Zoom_Demo.Meetings
                     enforce_login = "",
                     enforce_login_domains = "",
                     alternative_hosts = "",
-                    global_dial_in_countries = new string[]
-                {
-                        "",
-                },
+                    global_dial_in_countries = new string[]{ "" },
                     registrants_email_notification = false
                 },
             });
@@ -145,29 +141,32 @@ namespace BS_Zoom_Demo.Meetings
                 response = client.Execute(request);
             }
 
-            //Updating changed properties of the retrieved meeting entity.
-            if (input.State.HasValue)
-                meeting.State = input.State.Value;
+            if (response.StatusCode == HttpStatusCode.NoContent)
+            {
+                //Updating changed properties of the retrieved meeting entity.
+                if (input.State.HasValue)
+                    meeting.State = input.State.Value;
 
-            if (input.AssignedPersonId.HasValue)
-                meeting.AssignedPerson = _personRepository.Load(input.AssignedPersonId.Value);
+                if (input.AssignedPersonId.HasValue)
+                    meeting.AssignedPerson = _personRepository.Load(input.AssignedPersonId.Value);
 
-            if (!string.IsNullOrEmpty(input.topic_name))
-                meeting.TopicName = input.topic_name;
+                if (!string.IsNullOrEmpty(input.topic_name))
+                    meeting.TopicName = input.topic_name;
 
-            if (!string.IsNullOrEmpty(meetingPass))
-                meeting.MeetingPass = meetingPass;
+                if (!string.IsNullOrEmpty(meetingPass))
+                    meeting.MeetingPass = meetingPass;
 
-            if (!string.IsNullOrEmpty(input.start_time))
-                meeting.StartTime = DateTime.Parse(input.start_time);
+                if (!string.IsNullOrEmpty(input.start_time))
+                    meeting.StartTime = DateTime.Parse(input.start_time);
 
-            if (!string.IsNullOrEmpty(input.end_date_time))
-                meeting.EndTime = DateTime.Parse(input.end_date_time);
+                if (!string.IsNullOrEmpty(input.end_date_time))
+                    meeting.EndTime = DateTime.Parse(input.end_date_time);
 
-            if (!string.IsNullOrEmpty(input.agenda))
-                meeting.Description = input.agenda;
+                if (!string.IsNullOrEmpty(input.agenda))
+                    meeting.Description = input.agenda;
 
-            meeting.Duration = input.duration;
+                meeting.Duration = input.duration;
+            }
 
             //We even do not call Update method of the repository.
             //Because an application service method is a 'unit of work' scope as default.
@@ -254,7 +253,7 @@ namespace BS_Zoom_Demo.Meetings
                 accessToken = newJWTToken;
                 request = new RestRequest(Method.POST);
                 request.AddHeader("authorization", "Bearer " + accessToken);
-                request.AddParameter("application/json", "", ParameterType.RequestBody);
+                request.AddParameter("application/json", PostData, ParameterType.RequestBody);
 
                 response = client.Execute(request);
             }
@@ -295,8 +294,9 @@ namespace BS_Zoom_Demo.Meetings
 
                 response = client.Execute(request);                
             }
-                          
-            _meetingRepository.Delete(meeting);
+                       
+            if (response.StatusCode == HttpStatusCode.NoContent)
+                _meetingRepository.Delete(meeting);
         }        
 
         public string GetMeetingInfor(long meetingId, string accessToken)
@@ -324,7 +324,8 @@ namespace BS_Zoom_Demo.Meetings
                     response = client.Execute(request);
                 }
 
-                result = response.Content.ToString();
+                if (response.StatusCode == HttpStatusCode.OK)
+                    result = response.Content.ToString();
 
                 return result;
             }
