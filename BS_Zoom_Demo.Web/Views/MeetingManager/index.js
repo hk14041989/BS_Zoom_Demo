@@ -24,6 +24,20 @@
             location.href = '/MeetingManager/Create'
         });
 
+        $('#ShowList').click(function (e) {
+            e.preventDefault();
+
+            abp.ajax({
+                url: abp.appPath + 'MeetingManager/GetListMeetings',
+                type: 'GET',
+                dataType: 'html',
+                success: function (content) {
+                    alert(content);
+                },
+                error: function (e) { }
+            });
+        });
+
         $('.get-information').click(function (e) {
             var meetingId = $(this).attr("data-meeting-id");
             var meetingAccess = $(this).attr("data-meeting-access-token");

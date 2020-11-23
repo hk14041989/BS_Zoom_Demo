@@ -10,52 +10,40 @@
         <input type="hidden" name="MeetingId" value="@Model.Meet.Id" />        
         <input type="hidden" value="@Model.Meet.MeetingId" id="meeting_id" />        
         <div class="row clearfix">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <div class="card">
-                    <div class="header">
-                        <h2>
-                            Information
-                        </h2>
-                    </div>
-                    <div class="body">
-                        <div class="row" style="margin-bottom:auto; margin-top:auto;">
-                            <div class="col-md-6">
-                                <input type="text" name="topic_name" id="topic_name" value="@Model.Meet.TopicName" maxLength="100"
-                                       placeholder="topic name" class="form-control">
-                            </div>
-                            <div class="col-md-2">
-                                <input type="text" name="start_time" id="start_time" value="@Model.Meet.StartTime.ToString()" placeholder="start_time" class="form-control">
-                            </div>
-                            <div class="col-md-2">
-                                <input type="text" name="end_date_time" id="end_date_time" value="@Model.Meet.EndTime.ToString()" placeholder="end date time" class="form-control">
-                            </div>
-                            <div class="col-md-2">
-                                <input type="number" name="duration" id="duration" value="@Model.Meet.Duration" placeholder="duration" class="form-control">
-                            </div>
-                        </div>
-                        <div class="row" style="margin-bottom:auto; margin-top:auto;">
-                            <div class="col-md-2">
-                                <input type="password" name="meetting_password" id="meetting_password" value="@Model.Meet.MeetingPass" placeholder="password" class="form-control">
-                            </div>
-                            <div class="col-md-6">
-                                <input type="text" name="agenda" id="agenda" value="@Model.Meet.Description" placeholder="meeting description" class="form-control">
-                            </div>
-                            <div class="col-md-2">
-                                @Html.Label(L("AssignedPerson"))
-                            </div>
-                            <div class="col-md-2">
-                                @Html.DropDownList(
-                                                   "AssignedPersonId",
-                                                   Model.Teachers,
-                                                   new
-                                                   {
-                                                       @class = "form-control",
-                                                       id = "AssignedPersonCombobox"
-                                                   })
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="col-md-4">
+                <input type="text" name="topic_name" id="topic_name" value="@Model.Meet.TopicName" maxLength="100"
+                        placeholder="topic name" class="form-control">
+            </div>
+            <div class="col-md-3">
+                <input type="text" name="start_time" id="start_time" value="@Model.Meet.StartTime.ToString()" placeholder="start_time" class="form-control">
+            </div>
+            <div class="col-md-3">
+                <input type="text" name="end_date_time" id="end_date_time" value="@Model.Meet.EndTime.ToString()" placeholder="end date time" class="form-control">
+            </div>
+            <div class="col-md-2">
+                <input type="number" name="duration" id="duration" value="@Model.Meet.Duration" placeholder="duration" class="form-control">
+            </div>
+        </div>
+        <br/>
+        <div class="row" style="margin-bottom:auto; margin-top:auto;">
+            <div class="col-md-2">
+                <input type="password" name="meetting_password" id="meetting_password" value="@Model.Meet.MeetingPass" placeholder="password" class="form-control">
+            </div>
+            <div class="col-md-6">
+                <input type="text" name="agenda" id="agenda" value="@Model.Meet.Description" placeholder="meeting description" class="form-control">
+            </div>
+            <div class="col-md-2">
+                @Html.Label(L("AssignedPerson"))
+            </div>
+            <div class="col-md-2">
+                @Html.DropDownList(
+                                    "AssignedPersonId",
+                                    Model.Teachers,
+                                    new
+                                    {
+                                        @class = "form-control",
+                                        id = "AssignedPersonCombobox"
+                                    })
             </div>
         </div>
     </form>

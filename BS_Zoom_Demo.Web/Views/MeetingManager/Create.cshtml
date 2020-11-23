@@ -16,9 +16,14 @@
     @L("NewMeeting")
 </h2>
 
-<form id="MeetingCreationForm" style="margin:30px;">
+<form id="MeetingCreationForm">
+    <input type="hidden" value="@Model.accessToken" id="accessToken" />
+    <input type="hidden" value="" id="meeting_id" />
+    <input type="hidden" value="" id="meetting_password" />
+    <input type="hidden" value="" id="tmpArgs" />
+
     <div class="row clearfix">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="col-md-9">
             <div class="card">
                 <div class="header">
                     <h2>
@@ -26,19 +31,15 @@
                     </h2>
                 </div>
                 <div class="body">
-                    <input type="hidden" value="@Model.accessToken" id="accessToken" />
-                    <input type="hidden" value="" id="meeting_id" />
-                    <input type="hidden" value="" id="meetting_password" />
-                    <input type="hidden" value="" id="tmpArgs" />
                     <div class="row" style="margin-bottom:auto; margin-top:auto;">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <input type="text" name="topic_name" id="topic_name" value="" maxLength="100"
                                    placeholder="topic name" class="form-control">
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-3">
                             <input type="text" name="start_time" id="start_time" value="" placeholder="start_time" class="form-control">
                         </div>
-                        <div class="col-md-2">
+                        <div class="col-md-3">
                             <input type="text" name="end_date_time" id="end_date_time" value="" placeholder="end date time" class="form-control">
                         </div>
                         <div class="col-md-2">
@@ -67,16 +68,12 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-8 text-left">
-                            <div class="row">
-                                <div class="col-md-1">
-                                    <button type="submit" class="btn btn-primary" id="create_meeting">Create</button>
-                                </div>
-                            </div>
+                        <div class="col-md-12 text-right">
+                            <button type="submit" class="btn btn-primary" id="create_meeting">Create</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>    
+    </div>
 </form>

@@ -9,7 +9,7 @@
 		<text name="AllMeetings">All Meetings</text>
 		<text name="Unassigned">Unassigned</text>
 		<text name="NewMeeting">New Meeting</text>
-		<text name="AssignedPerson">Assigned Person</text>
+		<text name="AssignedPerson">Assigned Teacher</text>
 		<text name="MeetingState_Waiting">Waiting</text>
 		<text name="MeetingState_Active">Active</text>
 		<text name="MeetingState_Completed">Completed</text>
@@ -30,8 +30,9 @@
 		<text name="JoinHost" value="Join Host"></text>
 		<text name="JoinAttendee" value="Join Attendee"></text>
 		<text name="EditMeeting" value="Edit Meeting"></text>
-		
-		<text name="InvalidUserNameOrPassword" value="Invalid user name or password" />
+    <text name="ListMeetings" value="Show List"></text>
+    
+    <text name="InvalidUserNameOrPassword" value="Invalid user name or password" />
 		<text name="ThereIsNoTenantDefinedWithName{0}" value="There is no tenant defined with name {0}" />
 		<text name="TenantIsNotActive" value="Tenant {0} is not active." />
 		<text name="UserIsNotActiveAndCanNotLogin" value="User {0} is not active and can not log in." />

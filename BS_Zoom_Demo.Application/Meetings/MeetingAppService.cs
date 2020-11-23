@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Script.Serialization;
 
 namespace BS_Zoom_Demo.Meetings
@@ -317,6 +318,48 @@ namespace BS_Zoom_Demo.Meetings
                 {
                     var zoomToken = new ZoomToken(Const.apiKey, Const.apiSecret);
                     string newJWTToken = zoomToken.Token;
+                    request = new RestRequest(Method.GET);
+                    request.AddHeader("authorization", "Bearer " + newJWTToken);
+                    request.AddParameter("application/json", "", ParameterType.RequestBody);
+
+                    response = client.Execute(request);
+                }
+
+                if (response.StatusCode == HttpStatusCode.OK)
+                    result = response.Content.ToString();
+
+                return result;
+            }
+            catch (Exception)
+            {
+                return "";
+            }
+        }
+
+        public string GetListMeettings()
+        {
+            try
+            {
+                string result = "";
+                var zoomToken = new ZoomToken(Const.apiKey, Const.apiSecret);
+                string newJWTToken = "";
+
+                if (string.IsNullOrEmpty(Const.JWTToken))
+                    newJWTToken = zoomToken.Token;
+                else
+                    newJWTToken = Const.JWTToken;
+
+                var client = new RestClient("https://api.zoom.us/v2/users/" + Const.userId + "/meetings?" + "page_size=30");
+                var request = new RestRequest(Method.GET);
+                request.AddHeader("content-type", "application/json");
+                request.AddHeader("authorization", "Bearer " + newJWTToken);
+                request.AddParameter("application/json", "", ParameterType.RequestBody);
+
+                IRestResponse response = client.Execute(request);
+
+                if (response.StatusCode == HttpStatusCode.Unauthorized)
+                {
+                    newJWTToken = zoomToken.Token;
                     request = new RestRequest(Method.GET);
                     request.AddHeader("authorization", "Bearer " + newJWTToken);
                     request.AddParameter("application/json", "", ParameterType.RequestBody);

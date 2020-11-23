@@ -106,5 +106,12 @@ namespace BS_Zoom_Demo.Web.Controllers
 
             return OK(new { content });
         }
+
+        public JsonResult GetListMeetings()
+        {
+            string content = _meetingAppService.GetListMeettings();
+
+            return OK(new { content });
+        }
     }
 }
