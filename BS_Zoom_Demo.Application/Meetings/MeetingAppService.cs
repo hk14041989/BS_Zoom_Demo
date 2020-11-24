@@ -23,7 +23,7 @@ namespace BS_Zoom_Demo.Meetings
         private readonly IMeetingRepository _meetingRepository;
         private readonly IUserJoinMeetingRepository _userJoinMeetingRepository;
         private readonly IRepository<Person> _personRepository;
-        private readonly IMapper _mapper;        
+        private readonly IMapper _mapper;
         private static readonly HttpClient client = new HttpClient();
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace BS_Zoom_Demo.Meetings
 
             result.Meetings = new List<MeetingDto>();
 
-            foreach(var item in meetings)
+            foreach (var item in meetings)
             {
                 MeetingDto temp = new MeetingDto
                 {
@@ -68,7 +68,7 @@ namespace BS_Zoom_Demo.Meetings
 
                 result.Meetings.Add(temp);
             }
-          
+
             return result;
         }
 
@@ -124,7 +124,7 @@ namespace BS_Zoom_Demo.Meetings
                     enforce_login = "",
                     enforce_login_domains = "",
                     alternative_hosts = "",
-                    global_dial_in_countries = new string[]{ "" },
+                    global_dial_in_countries = new string[] { "" },
                     registrants_email_notification = false
                 },
             });
@@ -147,7 +147,7 @@ namespace BS_Zoom_Demo.Meetings
 
                     request.AddParameter("application/json", PostData, ParameterType.RequestBody);
                     response = client.Execute(request);
-                }                
+                }
             }
 
             if (response.StatusCode == HttpStatusCode.OK)
@@ -263,8 +263,7 @@ namespace BS_Zoom_Demo.Meetings
                 if (data.code == 124)
                 {
                     var zoomToken = new ZoomToken(Const.apiKey, Const.apiSecret);
-                    string newJWTToken = zoomToken.Token;
-                    accessToken = newJWTToken;
+                    accessToken = zoomToken.Token;
                     request = new RestRequest(Method.POST);
                     request.AddHeader("authorization", "Bearer " + accessToken);
                     request.AddParameter("application/json", PostData, ParameterType.RequestBody);
@@ -283,7 +282,7 @@ namespace BS_Zoom_Demo.Meetings
 
                 //Saving entity with standard Insert method of repositories.
                 _meetingRepository.Insert(meeting);
-            }                         
+            }
         }
 
         public void Delete(EntityDto<long> input)
@@ -315,10 +314,10 @@ namespace BS_Zoom_Demo.Meetings
                     response = client.Execute(request);
                 }
             }
-                       
+
             if (response.StatusCode == HttpStatusCode.OK)
                 _meetingRepository.Delete(meeting);
-        }        
+        }
 
         public string GetMeetingInfor(long meetingId, string accessToken)
         {
@@ -348,7 +347,7 @@ namespace BS_Zoom_Demo.Meetings
                         request.AddParameter("application/json", "", ParameterType.RequestBody);
 
                         response = client.Execute(request);
-                    }                    
+                    }
                 }
 
                 if (response.StatusCode == HttpStatusCode.OK)

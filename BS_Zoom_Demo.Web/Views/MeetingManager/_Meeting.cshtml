@@ -104,7 +104,21 @@
             });
 
             ZoomMtg.inMeetingServiceListener('onUserJoin', function (data) {
+                debugger;
                 console.log('inMeetingServiceListener onUserJoin', data);
+            });
+
+            //TODO
+            ZoomMtg.inMeetingServiceListener('onMeetingLeaveComplete', function (data) {
+                debugger;
+            });
+
+            ZoomMtg.inMeetingServiceListener('onMeetingUserLeave', function (data) {
+                debugger;
+            });
+
+            ZoomMtg.inMeetingServiceListener('onMeetingUserLeave', function (data) {
+                debugger;
             });
 
             ZoomMtg.inMeetingServiceListener('onUserLeave', function (data) {
@@ -128,10 +142,12 @@
             });
 
             ZoomMtg.inMeetingServiceListener('onUserIsInWaitingRoom', function (data) {
+                debugger;
                 console.log('inMeetingServiceListener onUserIsInWaitingRoom', data);
             });
 
             ZoomMtg.inMeetingServiceListener('onMeetingStatus', function (data) {
+                debugger;
                 console.log('inMeetingServiceListener onMeetingStatus', data);
             });
         }
