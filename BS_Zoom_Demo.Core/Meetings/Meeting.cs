@@ -28,12 +28,12 @@ namespace BS_Zoom_Demo.Meetings
         public virtual int? AssignedPersonId { get; set; }
 
         /// <summary>
-        /// Describes the task.
+        /// Describes the meeting.
         /// </summary>
         public virtual string Description { get; set; }
 
         /// <summary>
-        /// The time when this task is created.
+        /// The time when this meeting is created.
         /// </summary>
         public virtual DateTime CreationTime { get; set; }
 
@@ -52,7 +52,7 @@ namespace BS_Zoom_Demo.Meetings
 
         public virtual string MeetingPass { get; set; }
 
-        public virtual long MeetingId { get; set; }
+        public virtual string MeetingId { get; set; }
 
         /// <summary>
         /// Default costructor.

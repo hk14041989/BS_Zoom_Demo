@@ -76,7 +76,7 @@
             deleteMeeting(meetingId, meetingName);
         });
 
-        _$form.find('button[type="submit"]').click(function (e) {
+        $('#create_meeting').click(function (e) {
             e.preventDefault();            
 
             if (!_$form.valid()) {
@@ -92,21 +92,23 @@
 
         $('.join-host').click(function (e) {
             var meetingId = $(this).attr("data-meeting-id");
+            var meetingZoomId = $(this).attr("data-meeting-zoom-id");
             var meetingType = $(this).attr("data-meeting-type");
             var meetingPass = $(this).attr("data-meeting-pass");
 
-            joinMeeting(meetingId, meetingPass, meetingType, e);
+            joinMeeting(meetingId, meetingZoomId, meetingPass, meetingType, e);
         });
 
         $('.join-attendee').click(function (e) {
             var meetingId = $(this).attr("data-meeting-id");
+            var meetingZoomId = $(this).attr("data-meeting-zoom-id");
             var meetingType = $(this).attr("data-meeting-type");
             var meetingPass = $(this).attr("data-meeting-pass");
 
-            joinMeeting(meetingId, meetingPass, meetingType, e);
+            joinMeeting(meetingId, meetingZoomId, meetingPass, meetingType, e);
         });
 
-        function joinMeeting(meetingId, meetingPass, meetingType, e) {
+        function joinMeeting(meetingId, meetingZoomId, meetingPass, meetingType, e) {
             var testTool = window.testTool;
             if (testTool.isMobileDevice()) {
                 vConsole = new VConsole();
@@ -129,7 +131,7 @@
              */
             var API_SECRET = $('#api_secret').val();
 
-            var tmpMn = meetingId.replace(/([^0-9])+/i, "");
+            var tmpMn = meetingZoomId.replace(/([^0-9])+/i, "");
             if (tmpMn.match(/([0-9]{9,11})/)) {
                 tmpMn = tmpMn.match(/([0-9]{9,11})/)[1];
             }
@@ -139,12 +141,12 @@
             }
             testTool.setCookie(
                 "meeting_number",
-                meetingId
+                meetingZoomId
             );
 
             e.preventDefault();
             var meetingConfig = testTool.getMeetingConfig();
-            meetingConfig.mn = meetingId;
+            meetingConfig.mn = meetingZoomId;
             meetingConfig.pwd = meetingPass;
             meetingConfig.role = meetingType;
 
@@ -163,7 +165,7 @@
 
                     e.preventDefault();
                     abp.ajax({
-                        url: abp.appPath + 'MeetingManager/JoinMeetingHost',
+                        url: abp.appPath + 'MeetingManager/JoinMeetingHost?meetingId=' + meetingId + '&&meetingType=' + meetingType,
                         type: 'POST',
                         dataType: 'html',
                         success: function (content) {

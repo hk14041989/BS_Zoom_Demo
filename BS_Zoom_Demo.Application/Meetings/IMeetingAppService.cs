@@ -18,5 +18,9 @@ namespace BS_Zoom_Demo.Meetings
         string GetMeetingInfor(long meetingId, string accessToken);
 
         string GetListMeettings();
+
+        long SaveJoinTime(long meetingId, int meetingType);
+
+        bool SaveLeaveTime(long meetingId, long userJoinMeetingId);
     }
 }

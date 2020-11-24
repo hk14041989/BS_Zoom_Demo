@@ -1,8 +1,12 @@
-﻿@{
+﻿@using BS_Zoom_Demo.Web.Models.Meetings
+@model UserJoinMeetingModel
+@{
     Layout = null;
 }
-<div class="modal-body">
 
+<div class="modal-body">
+    <input type="hidden" name="userJoinMeetingId" id="userJoinMeetingId" value="@Model.userJoinMeetingId">
+    <input type="hidden" name="meetingid" id="meetingid" value="@Model.meetingId">
 </div>
 <script>
     const simd = async () => WebAssembly.validate(new Uint8Array([0, 97, 115, 109, 1, 0, 0, 0, 1, 4, 1, 96, 0, 0, 3, 2, 1, 0, 10, 9, 1, 7, 0, 65, 0, 253, 15, 26, 11]))
@@ -105,6 +109,22 @@
 
             ZoomMtg.inMeetingServiceListener('onUserLeave', function (data) {
                 console.log('inMeetingServiceListener onUserLeave', data);
+
+                debugger;
+
+                var meetingId = $('#meetingId').val();
+                var userJoinMeetingId = $('#userJoinMeetingId').val();
+
+                abp.ajax({
+                    url: abp.appPath + 'MeetingManager/LeaveMeeting?meetingId=' + meetingId + '&&userJoinMeetingId=' + userJoinMeetingId,
+                    type: 'POST',
+                    dataType: 'html',
+                    success: function (content) {
+                    },
+                    error: function (e) {
+                        alert(e.message);
+                    }
+                });
             });
 
             ZoomMtg.inMeetingServiceListener('onUserIsInWaitingRoom', function (data) {
@@ -116,7 +136,7 @@
             });
         }
 
-        beginJoin(meetingConfig.signature);
+        beginJoin(meetingConfig.signature);       
     })();
 
 </script>

@@ -27,7 +27,7 @@ namespace BS_Zoom_Demo.Meetings.Dtos
 
         public string MeetingPass { get; set; }
 
-        public long MeetingId { get; set; }
+        public string MeetingId { get; set; }
 
         //This method is just used by the Console Application to list tasks
         public override string ToString()

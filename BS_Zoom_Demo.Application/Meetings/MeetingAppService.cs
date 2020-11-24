@@ -5,6 +5,7 @@ using AutoMapper;
 using BS_Zoom_Demo.Common;
 using BS_Zoom_Demo.Meetings.Dtos;
 using BS_Zoom_Demo.Teachers;
+using BS_Zoom_Demo.UserJoinMeetings;
 using Newtonsoft.Json.Linq;
 using RestSharp;
 using System;
@@ -20,6 +21,7 @@ namespace BS_Zoom_Demo.Meetings
         //These members set in constructor using constructor injection.
 
         private readonly IMeetingRepository _meetingRepository;
+        private readonly IUserJoinMeetingRepository _userJoinMeetingRepository;
         private readonly IRepository<Person> _personRepository;
         private readonly IMapper _mapper;        
         private static readonly HttpClient client = new HttpClient();
@@ -28,11 +30,12 @@ namespace BS_Zoom_Demo.Meetings
         ///In constructor, we can get needed classes/interfaces.
         ///They are sent here by dependency injection system automatically.
         /// </summary>
-        public MeetingAppService(IMeetingRepository meetingRepository, IRepository<Person> personRepository, IMapper mapper)
+        public MeetingAppService(IMeetingRepository meetingRepository, IRepository<Person> personRepository, IMapper mapper, IUserJoinMeetingRepository userJoinMeetingRepository)
         {
             _meetingRepository = meetingRepository;
             _personRepository = personRepository;
             _mapper = mapper;
+            _userJoinMeetingRepository = userJoinMeetingRepository;
         }
 
         public GetMeetingsOutput GetMeetings(GetMeetingsInput input)
@@ -404,6 +407,58 @@ namespace BS_Zoom_Demo.Meetings
             catch (Exception)
             {
                 return "";
+            }
+        }
+
+        public long SaveJoinTime(long meetingId, int meetingType)
+        {
+            try
+            {
+                var meeting = _meetingRepository.Get(meetingId);
+
+                //Update state meeting
+                meeting.State = MeetingState.Active;
+
+                var userJoinMeeting = new UserJoinMeeting
+                {
+                    MeetingType = meetingType,
+                    MeetingId = meeting.MeetingId,
+                    UserId = Const.userId,
+                    UserName = ""
+                };
+
+                //Insert data user join meeting
+                long userJoinMeetingId = _userJoinMeetingRepository.InsertAndGetId(userJoinMeeting);
+
+                return userJoinMeetingId;
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
+        }
+
+        public bool SaveLeaveTime(long meetingId, long userJoinMeetingId)
+        {
+            try
+            {
+                var meeting = _meetingRepository.Get(meetingId);
+                var userJoinMeeting = _userJoinMeetingRepository.Get(userJoinMeetingId);
+
+                //Update state meeting
+                if (userJoinMeeting.MeetingType == 0)
+                    meeting.State = MeetingState.Completed;
+                else
+                    meeting.State = MeetingState.Completed;
+
+                //Update data user join meeting
+                userJoinMeeting.LeaveTime = DateTime.Now;
+
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
             }
         }
     }

@@ -25,7 +25,7 @@ namespace BS_Zoom_Demo.Web.Controllers
         {
             _meetingAppService = meetingAppService;
             _lookupAppService = lookupAppService;
-            _meetingRepository = meetingRepository;
+            _meetingRepository = meetingRepository;            
         }
 
         // GET: MeetingManager
@@ -100,8 +100,18 @@ namespace BS_Zoom_Demo.Web.Controllers
             return View("_EditMeetingModal", model);
         }
 
-        public ActionResult JoinMeetingHost()
+        public ActionResult JoinMeetingHost(long meetingId, int meetingType)
         {
+            //Save join meeting time 
+            long userJoinMeetingId = _meetingAppService.SaveJoinTime(meetingId, meetingType);
+
+            return View("_Meeting", new UserJoinMeetingModel { meetingId = meetingId, userJoinMeetingId = userJoinMeetingId });
+        }
+
+        public ActionResult LeaveMeeting(long meetingId, long userJoinMeetingId)
+        {
+            bool saveLeaveTime = _meetingAppService.SaveLeaveTime(meetingId, userJoinMeetingId);
+
             return View("_Meeting");
         }
 

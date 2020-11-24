@@ -7,6 +7,7 @@ using BS_Zoom_Demo.Authorization.Users;
 using BS_Zoom_Demo.Meetings;
 using BS_Zoom_Demo.MultiTenancy;
 using BS_Zoom_Demo.Teachers;
+using BS_Zoom_Demo.UserJoinMeetings;
 
 namespace BS_Zoom_Demo.EntityFramework
 {
@@ -16,6 +17,8 @@ namespace BS_Zoom_Demo.EntityFramework
         public virtual IDbSet<Meeting> Meetings { get; set; }
 
         public virtual IDbSet<Person> Teachers { get; set; }
+
+        public virtual IDbSet<UserJoinMeeting> UserJoinMeetings { get; set; }
 
         /* NOTE: 
          *   Setting "Default" to base class helps us when working migration commands on Package Manager Console.

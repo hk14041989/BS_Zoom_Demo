@@ -1,9 +1,5 @@
 ﻿using Abp.Domain.Repositories;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BS_Zoom_Demo.Meetings
 {
@@ -15,7 +11,7 @@ namespace BS_Zoom_Demo.Meetings
     public interface IMeetingRepository : IRepository<Meeting, long>
     {
         /// <summary>
-        /// Gets all tasks with <see cref="Meeting.AssignedPerson"/> is retrived (Include for EntityFramework, Fetch for NHibernate)
+        /// Gets all meetings with <see cref="Meeting.AssignedPerson"/> is retrived (Include for EntityFramework, Fetch for NHibernate)
         /// filtered by given conditions.
         /// </summary>
         /// <param name="assignedPersonId">Optional assigned person filter. If it's null, not filtered.</param>

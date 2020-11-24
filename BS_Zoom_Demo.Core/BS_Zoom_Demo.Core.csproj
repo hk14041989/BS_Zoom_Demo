@@ -234,6 +234,8 @@
     <Compile Include="Authorization\Users\UserStore.cs" />
     <Compile Include="Meetings\MeetingState.cs" />
     <Compile Include="Teachers\Person.cs" />
+    <Compile Include="UserJoinMeetings\IUserJoinMeetingRepository.cs" />
+    <Compile Include="UserJoinMeetings\UserJoinMeeting.cs" />
     <Compile Include="Validation\ValidationHelper.cs" />
   </ItemGroup>
   <ItemGroup>

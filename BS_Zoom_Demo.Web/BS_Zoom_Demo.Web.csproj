@@ -2824,6 +2824,7 @@
     <Compile Include="Models\Layout\SideBarUserAreaViewModel.cs" />
     <Compile Include="Models\Meetings\EditMeetingModalViewModel.cs" />
     <Compile Include="Models\Meetings\IndexViewModel.cs" />
+    <Compile Include="Models\Meetings\UserJoinMeetingModel.cs" />
     <Compile Include="Models\Roles\EditRoleModalViewModel.cs" />
     <Compile Include="Models\Roles\RoleListViewModel.cs" />
     <Compile Include="Models\Teachers\CreateMeetingViewModel.cs" />

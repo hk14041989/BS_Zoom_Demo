@@ -230,6 +230,7 @@
     <Compile Include="EntityFramework\Repositories\BS_Zoom_DemoRepositoryBase.cs" />
     <Compile Include="BS_Zoom_DemoDataModule.cs" />
     <Compile Include="EntityFramework\Repositories\MeetingRepository.cs" />
+    <Compile Include="EntityFramework\Repositories\UserJoinMeetingRepository.cs" />
     <Compile Include="Migrations\201809270654064_InitialMigrations.cs" />
     <Compile Include="Migrations\201809270654064_InitialMigrations.Designer.cs">
       <DependentUpon>201809270654064_InitialMigrations.cs</DependentUpon>
