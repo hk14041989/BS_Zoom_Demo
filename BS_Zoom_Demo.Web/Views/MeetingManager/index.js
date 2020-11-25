@@ -1,5 +1,7 @@
 ﻿(function ($) {
     $(function () {
+       // location.href = '/MeetingManager/Index';
+
         $('#zmmtg-root').css('display', 'none');
         var _$form = $('#MeetingCreationForm');
         _$form.find('input:first').focus();

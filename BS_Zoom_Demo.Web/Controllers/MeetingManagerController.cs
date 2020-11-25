@@ -18,7 +18,7 @@ namespace BS_Zoom_Demo.Web.Controllers
     {
         private readonly IMeetingAppService _meetingAppService;
         private readonly IMeetingRepository _meetingRepository;
-        private readonly ILookupAppService _lookupAppService;        
+        private readonly ILookupAppService _lookupAppService;
         public List<SelectListItem> teachersSelectListItems = new List<SelectListItem>();
 
         public MeetingManagerController(
@@ -26,14 +26,17 @@ namespace BS_Zoom_Demo.Web.Controllers
         {
             _meetingAppService = meetingAppService;
             _lookupAppService = lookupAppService;
-            _meetingRepository = meetingRepository;            
+            _meetingRepository = meetingRepository;
         }
 
         // GET: MeetingManager
-        public ActionResult Index(GetMeetingsInput input)
+        public ActionResult Index(GetMeetingsInput input, bool leaveMeeting = false, long meetingId = 0, long userJoinMeetingId = 0)
         {
             try
             {
+                if (leaveMeeting)
+                    _meetingAppService.SaveLeaveTime(meetingId, userJoinMeetingId);
+
                 var zoomToken = new ZoomToken(Const.apiKey, Const.apiSecret);
                 Const.JWTToken = zoomToken.Token;
 
@@ -50,12 +53,15 @@ namespace BS_Zoom_Demo.Web.Controllers
                     SelectedMeetingState = input.State
                 };
 
-                return View(model);
+                if (leaveMeeting)
+                    return RedirectToAction("Index", "MeetingManager");
+                else
+                    return View(model);
             }
             catch (Exception ex)
             {
                 return InternalServerError(ex.ToString());
-            }            
+            }
         }
 
         public ActionResult Create()
@@ -132,20 +138,6 @@ namespace BS_Zoom_Demo.Web.Controllers
                 //long userJoinMeetingId = 0;
 
                 return View("_Meeting", new UserJoinMeetingModel { meetingId = meetingId, userJoinMeetingId = userJoinMeetingId });
-            }
-            catch (Exception ex)
-            {
-                return InternalServerError(ex.ToString());
-            }
-        }
-
-        public ActionResult LeaveMeeting(long meetingId, long userJoinMeetingId)
-        {
-            try
-            {
-                bool saveLeaveTime = _meetingAppService.SaveLeaveTime(meetingId, userJoinMeetingId);
-
-                return Created();
             }
             catch (Exception ex)
             {

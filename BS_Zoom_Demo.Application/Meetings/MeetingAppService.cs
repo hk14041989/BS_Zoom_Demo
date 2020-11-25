@@ -1,9 +1,12 @@
 ﻿using Abp.Application.Services;
 using Abp.Application.Services.Dto;
 using Abp.Domain.Repositories;
+using Abp.Threading;
 using AutoMapper;
 using BS_Zoom_Demo.Common;
 using BS_Zoom_Demo.Meetings.Dtos;
+using BS_Zoom_Demo.Sessions;
+using BS_Zoom_Demo.Sessions.Dto;
 using BS_Zoom_Demo.Teachers;
 using BS_Zoom_Demo.UserJoinMeetings;
 using Newtonsoft.Json.Linq;
@@ -24,18 +27,21 @@ namespace BS_Zoom_Demo.Meetings
         private readonly IUserJoinMeetingRepository _userJoinMeetingRepository;
         private readonly IRepository<Person> _personRepository;
         private readonly IMapper _mapper;
+        private readonly ISessionAppService _sessionAppService;
         private static readonly HttpClient client = new HttpClient();
+        public GetCurrentLoginInformationsOutput LoginInformations { get; set; }
 
         /// <summary>
         ///In constructor, we can get needed classes/interfaces.
         ///They are sent here by dependency injection system automatically.
         /// </summary>
-        public MeetingAppService(IMeetingRepository meetingRepository, IRepository<Person> personRepository, IMapper mapper, IUserJoinMeetingRepository userJoinMeetingRepository)
+        public MeetingAppService(IMeetingRepository meetingRepository, IRepository<Person> personRepository, IMapper mapper, IUserJoinMeetingRepository userJoinMeetingRepository, ISessionAppService sessionAppService)
         {
             _meetingRepository = meetingRepository;
             _personRepository = personRepository;
             _mapper = mapper;
             _userJoinMeetingRepository = userJoinMeetingRepository;
+            _sessionAppService = sessionAppService;
         }
 
         public GetMeetingsOutput GetMeetings(GetMeetingsInput input)
@@ -413,6 +419,8 @@ namespace BS_Zoom_Demo.Meetings
         {
             try
             {
+                var currentUser = AsyncHelper.RunSync(() => _sessionAppService.GetCurrentLoginInformations());
+
                 var meeting = _meetingRepository.Get(meetingId);
 
                 //Update state meeting
@@ -423,7 +431,7 @@ namespace BS_Zoom_Demo.Meetings
                     MeetingType = meetingType,
                     MeetingId = meeting.MeetingId,
                     UserId = Const.userId,
-                    UserName = ""
+                    UserName = currentUser.User.UserName
                 };
 
                 //Insert data user join meeting

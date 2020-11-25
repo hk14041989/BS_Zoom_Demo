@@ -30,17 +30,10 @@
                         return tmpArgs.name;
                     }
                 }
-                return (
-                    "CDN#" +
-                    tmpArgs.version +
-                    "#" +
-                    testTool.detectOS() +
-                    "#" +
-                    testTool.getBrowserInfo()
-                );
+                return ("CDN#" + tmpArgs.version + "#" + testTool.detectOS() + "#" + testTool.getBrowserInfo());
             })(),
             passWord: tmpArgs.pwd,
-            leaveUrl: abp.appPath + "MeetingManager/Index",
+            leaveUrl: abp.appPath + "MeetingManager/Index?" + "leaveMeeting=true&&meetingId=" + $('#meetingid').val() + "&&userJoinMeetingId=" + $('#userJoinMeetingId').val(),
             role: parseInt(tmpArgs.role, 10),
             userEmail: (function () {
                 try {
@@ -92,6 +85,8 @@
                                     console.log("success getCurrentUser", res.result.currentUser);
                                 },
                             });
+
+                            console.log("ZoomSDKVersion", ZoomMtg.getWebSDKVersion());
                         },
                         error: function (res) {
                             console.log(res);
@@ -104,55 +99,22 @@
             });
 
             ZoomMtg.inMeetingServiceListener('onUserJoin', function (data) {
-                debugger;
                 console.log('inMeetingServiceListener onUserJoin', data);
-            });
-
-            //TODO
-            ZoomMtg.inMeetingServiceListener('onMeetingLeaveComplete', function (data) {
-                debugger;
-            });
-
-            ZoomMtg.inMeetingServiceListener('onMeetingUserLeave', function (data) {
-                debugger;
-            });
-
-            ZoomMtg.inMeetingServiceListener('onMeetingUserLeave', function (data) {
-                debugger;
             });
 
             ZoomMtg.inMeetingServiceListener('onUserLeave', function (data) {
                 console.log('inMeetingServiceListener onUserLeave', data);
-
-                debugger;
-
-                var meetingId = $('#meetingId').val();
-                var userJoinMeetingId = $('#userJoinMeetingId').val();
-
-                abp.ajax({
-                    url: abp.appPath + 'MeetingManager/LeaveMeeting?meetingId=' + meetingId + '&&userJoinMeetingId=' + userJoinMeetingId,
-                    type: 'POST',
-                    dataType: 'html',
-                    success: function (content) {
-                    },
-                    error: function (e) {
-                        alert(e.message);
-                    }
-                });
             });
 
             ZoomMtg.inMeetingServiceListener('onUserIsInWaitingRoom', function (data) {
-                debugger;
                 console.log('inMeetingServiceListener onUserIsInWaitingRoom', data);
             });
 
             ZoomMtg.inMeetingServiceListener('onMeetingStatus', function (data) {
-                debugger;
                 console.log('inMeetingServiceListener onMeetingStatus', data);
             });
         }
 
-        beginJoin(meetingConfig.signature);       
+        beginJoin(meetingConfig.signature);
     })();
-
 </script>
