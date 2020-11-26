@@ -1,7 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-using Abp.Authorization.Users;
+﻿using Abp.Authorization.Users;
 using Abp.AutoMapper;
 using Abp.MultiTenancy;
+using System.ComponentModel.DataAnnotations;
 
 namespace BS_Zoom_Demo.MultiTenancy.Dto
 {
@@ -10,11 +10,11 @@ namespace BS_Zoom_Demo.MultiTenancy.Dto
     {
         [Required]
         [StringLength(AbpTenantBase.MaxTenancyNameLength)]
-        [RegularExpression(Tenant.TenancyNameRegex)]
+        [RegularExpression(AbpTenantBase.TenancyNameRegex)]
         public string TenancyName { get; set; }
 
         [Required]
-        [StringLength(Tenant.MaxNameLength)]
+        [StringLength(AbpTenantBase.MaxNameLength)]
         public string Name { get; set; }
 
         [Required]

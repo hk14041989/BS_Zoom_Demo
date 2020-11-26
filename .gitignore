@@ -339,3 +339,4 @@ ASALocalRun/
 # BeatPulse healthcheck temp database
 healthchecksdb
 /.nuget
+/BS_Zoom_Demo.Web/App_Data/Logs/Logs.txt

@@ -1,22 +1,21 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using Abp.Auditing;
+﻿using Abp.Auditing;
 using Abp.Authorization.Users;
-using BS_Zoom_Demo.Users;
-using BS_Zoom_Demo.Validation;
 using Abp.Extensions;
 using BS_Zoom_Demo.Authorization.Users;
+using BS_Zoom_Demo.Validation;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace BS_Zoom_Demo.Authorization.Accounts.Dto
 {
     public class RegisterInput : IValidatableObject
     {
         [Required]
-        [StringLength(User.MaxNameLength)]
+        [StringLength(AbpUserBase.MaxNameLength)]
         public string Name { get; set; }
 
         [Required]
-        [StringLength(User.MaxSurnameLength)]
+        [StringLength(AbpUserBase.MaxSurnameLength)]
         public string Surname { get; set; }
 
         [Required]
@@ -29,7 +28,7 @@ namespace BS_Zoom_Demo.Authorization.Accounts.Dto
         public string EmailAddress { get; set; }
 
         [Required]
-        [StringLength(User.MaxPlainPasswordLength)]
+        [StringLength(AbpUserBase.MaxPlainPasswordLength)]
         [DisableAuditing]
         public string Password { get; set; }
 
